@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIOSCOPE — Cours de sciences de la nature et de la vie</title>
+<meta name="description" content="Accompagnement académique du CEM au Master (USTHB) par Allaa Eddine.">
+<meta property="og:title" content="BIOSCOPE — Cours Particuliers SNV & Microbiologie">
+<meta property="og:description" content="Accompagnement académique du CEM au Master (USTHB) par Allaa Eddine.">
+<meta property="og:image" content="https://intj-boy.github.io/Bioscopedz/og-image.png">
+<meta property="og:url" content="https://intj-boy.github.io/Bioscopedz/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BIOSCOPE — Cours Particuliers SNV & Microbiologie">
+<meta name="twitter:description" content="Accompagnement académique du CEM au Master (USTHB) par Allaa Eddine.">
+<meta name="twitter:image" content="https://intj-boy.github.io/Bioscopedz/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23EAF3EE' stroke='%230B6E5F' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='11' fill='%23FF5F45'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EAF3EE;
+    --paper-2:#DCEDE2;
+    --ink:#132821;
+    --ink-soft:#3E5C4E;
+    --teal:#0E9C86;
+    --teal-deep:#0B6E5F;
+    --amber:#F5A927;
+    --colony:#FF5F45;
+    --sage:#3FB871;
+    --violet:#6E5CE0;
+    --card:#FFFFFF;
+    --border:#CDE3D6;
+    --radius:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Work Sans', -apple-system, sans-serif; line-height:1.6;
+    background-image:linear-gradient(var(--paper-2) 1px, transparent 1px);
+    background-size:100% 42px;
+  }
+  [dir="rtl"] body, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] .mono{
+    font-family:'Segoe UI', Tahoma, Geneva, Arial, sans-serif;
+  }
+  [dir="rtl"]{text-align:right;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  h1,h2,h3{font-family:'Fraunces', serif; color:var(--ink); font-weight:600; letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 1.75rem;}
+
+  .tag{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--teal); border:1px solid var(--teal); border-radius:20px; padding:.25rem .7rem;
+    background:rgba(31,75,68,0.05);
+  }
+  [dir="rtl"] .tag{font-family:'Segoe UI', Tahoma, Arial, sans-serif; letter-spacing:0; text-transform:none;}
+  .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--colony);}
+
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(237,242,237,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--border);
+  }
+  .header-inner{display:flex; align-items:center; justify-content:space-between; padding:1.1rem 0; gap:1rem;}
+  .brand{display:flex; align-items:center; gap:.6rem; font-family:'Fraunces', serif; font-weight:700; font-size:1.35rem; color:var(--teal-deep); white-space:nowrap;}
+  .brand .scope{width:30px;height:30px;border-radius:50%; border:2px solid var(--teal-deep); display:flex; align-items:center; justify-content:center;}
+  .brand .scope::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--colony);}
+  nav{display:flex; align-items:center; gap:1.5rem;}
+  nav a{font-size:.9rem; font-weight:500; text-decoration:none; color:var(--ink-soft); transition:color .15s; white-space:nowrap;}
+  nav a:hover, nav a:focus-visible{color:var(--teal-deep);}
+  .lang-switcher{display:flex; gap:.35rem;}
+  .lang-btn{
+    background:var(--card); border:1px solid var(--border); padding:.3rem .65rem; border-radius:20px;
+    cursor:pointer; font-size:.78rem; font-weight:700; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace;
+  }
+  .lang-btn.active{background:var(--teal-deep); color:#fff; border-color:var(--teal-deep);}
+  .btn-wa{
+    display:inline-flex; align-items:center; gap:.5rem; background:var(--teal-deep); color:#fff; text-decoration:none;
+    padding:.6rem 1.15rem; border-radius:30px; font-weight:600; font-size:.85rem;
+    box-shadow:0 3px 10px rgba(18,53,49,0.25); transition:transform .15s, background .15s; border:none; cursor:pointer; white-space:nowrap;
+  }
+  .btn-wa:hover{background:var(--teal); transform:translateY(-2px);}
+  .btn-wa:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--colony); outline-offset:2px;
+  }
+  .menu-toggle{display:none; background:none; border:none; font-size:1.5rem; color:var(--teal-deep); cursor:pointer;}
+
+  .header-account{
+    display:flex; align-items:center; gap:.4rem; font-size:.82rem; font-weight:600; color:var(--teal-deep);
+    text-decoration:none; padding:.4rem .75rem; border-radius:20px; border:1.5px solid var(--teal-deep); white-space:nowrap;
+  }
+  .header-account.logged-in{background:var(--teal-deep); color:#fff;}
+  .header-account .acc-avatar{
+    width:18px; height:18px; border-radius:50%; background:#fff; color:var(--teal-deep); font-size:.68rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  @media (max-width:800px){ .header-account .acc-label{display:none;} }
+
+  .hero{
+    padding:4.5rem 0 3.5rem; position:relative; overflow:hidden;
+    background:
+      radial-gradient(600px 400px at 85% -10%, rgba(245,169,39,0.18), transparent 60%),
+      radial-gradient(500px 380px at 100% 30%, rgba(255,95,69,0.12), transparent 65%),
+      radial-gradient(500px 400px at -10% 90%, rgba(110,92,224,0.10), transparent 60%);
+  }
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:3rem; align-items:center;}
+  .hero h1{font-size:2.6rem; line-height:1.14; margin-bottom:1.1rem;}
+  .hero p{font-size:1.05rem; color:var(--ink-soft); max-width:48ch; margin-bottom:1.75rem;}
+  .hero-ctas{display:flex; gap:1rem; flex-wrap:wrap;}
+  .btn-outline{
+    display:inline-flex; align-items:center; gap:.5rem; border:1.5px solid var(--teal-deep); color:var(--teal-deep);
+    text-decoration:none; padding:.58rem 1.1rem; border-radius:30px; font-weight:600; font-size:.85rem; background:none; cursor:pointer;
+  }
+
+  .petri{
+    position:relative; width:100%; aspect-ratio:1/1; max-width:340px; margin:0 auto; border-radius:50%;
+    background:radial-gradient(circle at 30% 25%, #fff 0%, #F4F8F3 55%, #E4EDE2 100%);
+    border:6px solid var(--card);
+    box-shadow:0 0 0 2px var(--border), 0 20px 40px -12px rgba(18,53,49,0.25), inset 0 0 30px rgba(31,75,68,0.05);
+  }
+  .colony{position:absolute; border-radius:50%; opacity:.85; animation:grow 4.5s ease-in-out infinite;}
+  .colony.c1{width:70px; height:70px; top:18%; left:20%; background:radial-gradient(circle at 40% 35%, var(--amber), #c98a2b 80%);}
+  .colony.c2{width:46px; height:46px; top:55%; left:55%; background:radial-gradient(circle at 40% 35%, var(--colony), #963831 80%); animation-delay:.8s;}
+  .colony.c3{width:34px; height:34px; top:32%; left:62%; background:radial-gradient(circle at 40% 35%, var(--sage), #55806a 80%); animation-delay:1.6s;}
+  .colony.c4{width:26px; height:26px; top:68%; left:24%; background:radial-gradient(circle at 40% 35%, var(--teal), #0e2b27 80%); animation-delay:2.3s;}
+  .colony.c5{width:18px; height:18px; top:15%; left:55%; background:radial-gradient(circle at 40% 35%, var(--violet), #4a3bb0 80%); animation-delay:1.1s;}
+  @keyframes grow{0%,100%{transform:scale(1);} 50%{transform:scale(1.12);}}
+  .petri-caption{text-align:center; margin-top:1rem; font-size:.75rem; color:var(--ink-soft);}
+
+  .trust-strip{display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin-top:2rem; padding-top:1.6rem; border-top:1px dashed var(--border);}
+  .trust-item{display:flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--ink-soft); font-weight:500;}
+  .trust-item .tdot{width:7px; height:7px; border-radius:50%; background:var(--teal); flex-shrink:0;}
+
+  /* Scroll reveal */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  /* Services carousel */
+  .carousel-wrap{position:relative;}
+  .carousel-track{
+    display:flex; gap:1.4rem; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:.5rem;
+    scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-track .service-card, .carousel-track .testi-card{flex:0 0 auto; width:min(300px, 82vw); scroll-snap-align:start;}
+  .carousel-arrows{display:flex; gap:.6rem; justify-content:flex-end; margin-bottom:1rem;}
+  .arrow-btn{
+    width:38px; height:38px; border-radius:50%; border:1.5px solid var(--border); background:var(--card);
+    color:var(--teal-deep); font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.15s;
+  }
+  .arrow-btn:hover{background:var(--teal-deep); color:#fff; border-color:var(--teal-deep);}
+  .carousel-dots{display:flex; gap:.5rem; justify-content:center; margin-top:1.2rem;}
+  .carousel-dots button{
+    width:8px; height:8px; border-radius:50%; border:none; background:var(--border); cursor:pointer; padding:0; transition:.2s;
+  }
+  .carousel-dots button.active{background:var(--teal-deep); width:22px; border-radius:6px;}
+
+  /* Sticky mobile CTA */
+  .mobile-cta-bar{display:none;}
+  @media (max-width:800px){
+    .mobile-cta-bar{
+      display:flex; position:fixed; bottom:0; left:0; right:0; z-index:95;
+      background:var(--card); border-top:1px solid var(--border); padding:.7rem 1rem;
+      box-shadow:0 -6px 20px rgba(18,53,49,0.12); gap:.7rem;
+    }
+    .mobile-cta-bar .btn-wa, .mobile-cta-bar .btn-outline{flex:1; justify-content:center;}
+    body{padding-bottom:70px;}
+    .back-to-top{bottom:5.2rem;}
+  }
+
+  /* Stats bar */
+  .stats-bar{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; background:var(--teal-deep); border-radius:var(--radius); padding:1.8rem 1rem; margin:2.5rem 0;}
+  .stat-item{text-align:center; color:#fff;}
+  .stat-item .stat-num{font-family:'Fraunces', serif; font-size:1.7rem; font-weight:700; display:block;}
+  .stat-item .stat-label{font-size:.75rem; opacity:.85; margin-top:.2rem; display:block;}
+  @media (max-width:600px){ .stat-item .stat-num{font-size:1.3rem;} }
+
+  /* Testimonials */
+  .testi-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.4rem;}
+  .testi-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;}
+  .testi-card .stars{color:var(--amber); font-size:.85rem; margin-bottom:.7rem;}
+  .testi-card p{font-size:.9rem; color:var(--ink-soft); font-style:italic; margin-bottom:1rem;}
+  .testi-card .testi-name{font-weight:600; font-size:.85rem;}
+  .testi-card .testi-role{font-size:.78rem; color:var(--ink-soft);}
+  .testi-placeholder{border:1.5px dashed var(--border); background:transparent;}
+  .testi-placeholder p{font-style:normal; color:var(--sage);}
+
+  /* Payment banner */
+  .payment-banner{display:flex; flex-wrap:wrap; gap:1.4rem; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem; margin-top:1.6rem;}
+  .payment-method{flex:1; min-width:160px; text-align:center;}
+  .payment-method .pm-icon{font-size:1.4rem; margin-bottom:.4rem;}
+  .payment-method .pm-name{font-weight:600; font-size:.9rem;}
+  .payment-method .pm-desc{font-size:.78rem; color:var(--ink-soft); margin-top:.2rem;}
+
+  /* Resources */
+  .resource-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; display:flex; align-items:center; gap:1rem;}
+  .resource-card .res-icon{width:42px; height:42px; border-radius:8px; background:var(--paper-2); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;}
+  .resource-card .res-info{flex:1;}
+  .resource-card .res-title{font-weight:600; font-size:.92rem;}
+  .resource-card .res-sub{font-size:.78rem; color:var(--ink-soft);}
+  .resource-card a{font-size:.8rem; font-weight:600; color:var(--teal-deep); text-decoration:none; white-space:nowrap;}
+
+  /* Status badges (4 states) */
+  .badge.unpaid{background:rgba(255,95,69,0.15); color:#b8351f;}
+  .badge.cancelled{background:rgba(60,60,60,0.12); color:#555;}
+  .res-row{flex-wrap:wrap;}
+  .res-row .r-actions{display:flex; gap:.5rem; align-items:center;}
+  .cancel-btn{
+    font-size:.76rem; font-weight:600; color:var(--colony); background:none; border:1px solid var(--colony);
+    border-radius:20px; padding:.3rem .8rem; cursor:pointer; white-space:nowrap;
+  }
+  .cancel-btn:hover{background:var(--colony); color:#fff;}
+  .cancel-btn:disabled{opacity:.4; cursor:not-allowed;}
+
+  /* Admin panel */
+  .admin-panel{margin-top:2.5rem; border-top:2px dashed var(--border); padding-top:2rem;}
+  .admin-panel .tag{background:rgba(255,95,69,0.08); border-color:var(--colony); color:var(--colony);}
+  .admin-row{display:grid; grid-template-columns:1.3fr 1fr auto; gap:1rem; align-items:center; padding:1rem 1.5rem; border-bottom:1px solid var(--border);}
+  .admin-row:last-child{border-bottom:none;}
+  .admin-row select{padding:.4rem .6rem; border-radius:6px; border:1px solid var(--border); font-size:.82rem; background:var(--paper);}
+  @media (max-width:700px){ .admin-row, .res-row{grid-template-columns:1fr;} }
+
+  section{padding:4rem 0; scroll-margin-top:80px;}
+  .section-head{max-width:60ch; margin-bottom:2.5rem;}
+  .section-head .tag{margin-bottom:1rem;}
+  .section-head h2{font-size:1.85rem; margin-bottom:.6rem;}
+  .section-head p{color:var(--ink-soft);}
+
+  .about-card{
+    background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+    padding:2.25rem; display:grid; grid-template-columns:auto 1fr; gap:2rem; align-items:start;
+    box-shadow:0 6px 24px rgba(18,53,49,0.05);
+  }
+  [dir="rtl"] .about-card{grid-template-columns:1fr auto;}
+  .avatar{
+    width:96px; height:96px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg, var(--teal), var(--teal-deep)); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:'Fraunces', serif; font-size:1.9rem; font-weight:600;
+    border:3px solid var(--card); box-shadow:0 0 0 2px var(--border);
+  }
+  .about-card h3{font-size:1.3rem; margin-bottom:.15rem;}
+  .about-role{color:var(--ink-soft); font-size:.9rem; margin-bottom:1rem;}
+  .about-card p{color:var(--ink-soft); margin-bottom:.9rem;}
+  .credentials{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem;}
+  .credentials span{
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem; background:var(--paper-2); border:1px solid var(--border);
+    border-radius:20px; padding:.3rem .7rem; color:var(--ink-soft);
+  }
+  [dir="rtl"] .credentials span{font-family:'Segoe UI', Tahoma, Arial, sans-serif;}
+
+  .levels{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.5rem;}
+  .level-pill{
+    font-family:'IBM Plex Mono', monospace; font-size:.78rem; border:1px dashed var(--teal); color:var(--teal-deep);
+    border-radius:20px; padding:.4rem 1rem; background:var(--card);
+  }
+  [dir="rtl"] .level-pill{font-family:'Segoe UI', Tahoma, Arial, sans-serif;}
+
+  .why-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.4rem;}
+  .why-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;}
+  .why-card .spec-no{font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--sage); letter-spacing:.1em;}
+  [dir="rtl"] .why-card .spec-no{font-family:'Segoe UI', Tahoma, Arial, sans-serif; letter-spacing:0;}
+  .why-card h3{font-size:1.02rem; margin:.5rem 0 .4rem;}
+  .why-card p{color:var(--ink-soft); font-size:.88rem;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.4rem;}
+  .service-card{
+    background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.75rem;
+    position:relative; transition:transform .18s, box-shadow .18s;
+  }
+  .service-card:hover{transform:translateY(-4px); box-shadow:0 14px 28px rgba(18,53,49,0.08);}
+  .service-card .spec-no{font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--sage); letter-spacing:.1em;}
+  [dir="rtl"] .service-card .spec-no{font-family:'Segoe UI', Tahoma, Arial, sans-serif; letter-spacing:0;}
+  .service-card h3{font-size:1.1rem; margin:.5rem 0 .5rem;}
+  .service-card p{color:var(--ink-soft); font-size:.9rem; margin-bottom:1rem;}
+  .service-meta{display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border); padding-top:.9rem;}
+  .service-meta .duration{font-family:'IBM Plex Mono', monospace; font-size:.75rem; color:var(--ink-soft);}
+  [dir="rtl"] .service-meta .duration{font-family:'Segoe UI', Tahoma, Arial, sans-serif;}
+  .service-meta .ask-btn{font-size:.8rem; font-weight:600; color:var(--teal-deep); text-decoration:none; display:inline-flex; align-items:center; gap:.3rem;}
+  .service-meta .ask-btn:hover{color:var(--colony);}
+
+  /* PRICING */
+  .price-table{
+    background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;
+  }
+  .price-row{
+    display:grid; grid-template-columns:1fr auto auto; gap:1.25rem; align-items:center;
+    padding:1.1rem 1.6rem; border-bottom:1px solid var(--border); transition:background .15s;
+  }
+  .price-row:last-child{border-bottom:none;}
+  .price-row:hover{background:rgba(14,156,134,0.05);}
+  .price-row.featured{background:rgba(14,156,134,0.06); border-left:3px solid var(--teal-deep);}
+  [dir="rtl"] .price-row.featured{border-left:none; border-right:3px solid var(--teal-deep);}
+  .price-row .p-service{font-weight:600; font-size:.98rem;}
+  .price-row .p-sub{display:block; font-size:.8rem; color:var(--ink-soft); font-weight:400; margin-top:.15rem;}
+  .price-row .p-duration{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--ink-soft); white-space:nowrap;}
+  [dir="rtl"] .price-row .p-duration{font-family:'Segoe UI', Tahoma, Arial, sans-serif;}
+  .price-row .p-amount{font-family:'Fraunces', serif; font-weight:700; color:var(--teal-deep); font-size:1.15rem; white-space:nowrap;}
+  .price-note{font-size:.85rem; color:var(--ink-soft); margin-top:1.3rem; line-height:1.7;}
+  @media (max-width:600px){
+    .price-row{grid-template-columns:1fr; gap:.3rem; text-align:left;}
+    [dir="rtl"] .price-row{text-align:right;}
+    .price-row .p-amount{font-size:1.3rem;}
+  }
+
+  .process{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; counter-reset:step;}
+  .step{position:relative; padding-left:2.6rem;}
+  [dir="rtl"] .step{padding-left:0; padding-right:2.6rem;}
+  .step::before{
+    counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:2rem; height:2rem; border-radius:50%;
+    background:var(--teal-deep); color:#fff; font-family:'IBM Plex Mono', monospace; font-size:.85rem; display:flex; align-items:center; justify-content:center;
+  }
+  [dir="rtl"] .step::before{left:auto; right:0; font-family:'Segoe UI', Tahoma, Arial, sans-serif;}
+  .step h3{font-size:1rem; margin-bottom:.3rem;}
+  .step p{color:var(--ink-soft); font-size:.9rem;}
+
+  .contact-wrap{
+    background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:2.5rem;
+    display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;
+  }
+  .contact-note h3{font-size:1.2rem; margin-bottom:.75rem;}
+  .contact-note p{color:var(--ink-soft); font-size:.93rem; margin-bottom:1rem;}
+  .wa-direct{display:flex; align-items:center; gap:.6rem; margin-top:.6rem; color:var(--teal-deep); font-weight:600; text-decoration:none; font-size:.95rem;}
+  .form-group{margin-bottom:1.1rem;}
+  .form-group label{display:block; font-size:.85rem; font-weight:600; margin-bottom:.4rem; color:var(--ink);}
+  .form-group input, .form-group select, .form-group textarea{
+    width:100%; padding:.75rem .85rem; border:1px solid var(--border); border-radius:var(--radius);
+    font-family:inherit; font-size:.95rem; background:var(--paper);
+  }
+  .form-group textarea{resize:vertical; height:90px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:1rem;}
+  .method-toggle{display:flex; gap:.6rem; margin-bottom:1.3rem;}
+  .method-btn{
+    flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem .8rem; border-radius:30px;
+    border:1.5px solid var(--border); background:var(--paper); font-weight:600; font-size:.87rem; color:var(--ink-soft); cursor:pointer; transition:.15s;
+  }
+  .method-btn.active{background:var(--teal-deep); color:#fff; border-color:var(--teal-deep);}
+  .method-btn:hover:not(.active){border-color:var(--teal);}
+
+  footer{border-top:1px solid var(--border); padding:2.5rem 0; text-align:center; color:var(--ink-soft); font-size:.85rem;}
+  footer .brand{justify-content:center; margin-bottom:.5rem; font-size:1.05rem;}
+
+  /* Toast notification */
+  .toast{
+    position:fixed; bottom:1.6rem; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--ink); color:#fff; padding:.85rem 1.4rem; border-radius:30px; font-size:.88rem; font-weight:500;
+    display:flex; align-items:center; gap:.6rem; z-index:200; opacity:0; pointer-events:none; transition:.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25); max-width:90vw;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .toast .tick{width:18px; height:18px; border-radius:50%; background:var(--sage); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.7rem;}
+  .toast.error .tick{background:var(--colony);}
+
+  /* Account / auth */
+  .auth-tabs{display:flex; gap:.6rem; margin-bottom:1.3rem;}
+  .auth-panel{display:none;}
+  .auth-panel.active{display:block;}
+  .account-loggedin{display:none;}
+  .account-header{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.8rem; margin-bottom:1.5rem;}
+  .account-header .who{font-size:.92rem; color:var(--ink-soft);}
+  .res-table{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;}
+  .res-row{display:grid; grid-template-columns:1fr auto auto; gap:1rem; align-items:center; padding:1rem 1.5rem; border-bottom:1px solid var(--border);}
+  .res-row:last-child{border-bottom:none;}
+  .res-row .r-service{font-weight:600; font-size:.92rem;}
+  .res-row .r-date{font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:var(--ink-soft);}
+  [dir="rtl"] .res-row .r-date{font-family:'Segoe UI', Tahoma, Arial, sans-serif;}
+  .badge{font-size:.75rem; font-weight:600; padding:.3rem .7rem; border-radius:20px; white-space:nowrap;}
+  .badge.paid{background:rgba(63,184,113,0.15); color:#1e7a45;}
+  .badge.pending{background:rgba(245,169,39,0.18); color:#8a5c0c;}
+  .empty-state{text-align:center; padding:2.5rem 1rem; color:var(--ink-soft); font-size:.9rem;}
+  .auth-error{color:var(--colony); font-size:.85rem; margin-top:.6rem; display:none;}
+  .auth-error.show{display:block;}
+
+  /* Floating quick-nav (scroll dots) */
+  .quick-nav{
+    position:fixed; right:1.4rem; top:50%; transform:translateY(-50%); z-index:90;
+    display:flex; flex-direction:column; gap:.9rem;
+  }
+  [dir="rtl"] .quick-nav{right:auto; left:1.4rem;}
+  .quick-nav a{
+    width:11px; height:11px; border-radius:50%; background:var(--card); border:2px solid var(--border);
+    display:block; transition:.2s; position:relative;
+  }
+  .quick-nav a.active{background:var(--teal-deep); border-color:var(--teal-deep); transform:scale(1.25);}
+  .quick-nav a::after{
+    content:attr(data-label); position:absolute; right:130%; top:50%; transform:translateY(-50%);
+    background:var(--ink); color:#fff; font-size:.72rem; padding:.25rem .6rem; border-radius:4px; white-space:nowrap;
+    opacity:0; pointer-events:none; transition:opacity .15s;
+  }
+  [dir="rtl"] .quick-nav a::after{right:auto; left:130%;}
+  .quick-nav a:hover::after{opacity:1;}
+
+  .back-to-top{
+    position:fixed; bottom:1.6rem; right:1.4rem; z-index:90;
+    width:44px; height:44px; border-radius:50%; background:var(--teal-deep); color:#fff; border:none;
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem; cursor:pointer;
+    box-shadow:0 8px 20px rgba(18,53,49,0.3); opacity:0; pointer-events:none; transform:translateY(10px); transition:.25s;
+  }
+  [dir="rtl"] .back-to-top{right:auto; left:1.4rem;}
+  .back-to-top.show{opacity:1; pointer-events:auto; transform:translateY(0);}
+
+  @media (max-width:800px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero .petri-block{order:-1;}
+    .about-card{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;}
+    nav{position:fixed; top:64px; left:0; right:0; background:var(--paper); flex-direction:column; align-items:flex-start; padding:1rem 1.75rem; border-bottom:1px solid var(--border); display:none; gap:1rem;}
+    nav.open{display:flex;}
+    .menu-toggle{display:block;}
+    .form-row{grid-template-columns:1fr;}
+    .quick-nav{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="brand"><span class="scope"></span> BIOSCOPE</div>
+    <nav id="mainNav">
+      <a href="#about" data-i18n="navAbout">À propos</a>
+      <a href="#why" data-i18n="navWhy">Pourquoi moi</a>
+      <a href="#testimonials" data-i18n="navTesti">Avis</a>
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#pricing" data-i18n="navPricing">Tarifs</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+      <a href="#account" data-i18n="navAccount">Mon espace</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:.6rem;">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">ع</button>
+      </div>
+      <a href="#account" class="header-account" id="headerAccountBtn" data-i18n="headerLogin">Se connecter</a>
+      <a class="btn-wa" href="#contact" data-i18n="navBook">Réserver</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag"><span class="dot"></span> <span data-i18n="heroTag">Sciences de la Nature et de la Vie · CEM → Université</span></span>
+      <h1 data-i18n="heroTitle">Comprendre les sciences de la nature et de la vie, une culture à la fois.</h1>
+      <p data-i18n="heroDesc">Je m'appelle Allaa Eddine, étudiant en Master 2 Microbiologie et Contrôle de Qualité à l'USTHB. J'accompagne les élèves du système algérien — SNV au CEM et au lycée — ainsi que les étudiants en biologie et microbiologie à l'université, de la L1 au M2.</p>
+      <div class="hero-ctas">
+        <a class="btn-wa" href="#contact" data-i18n="heroCta1">Discuter sur WhatsApp</a>
+        <a class="btn-outline" href="#services" data-i18n="heroCta2">Voir les services</a>
+      </div>
+      <div class="trust-strip">
+        <span class="trust-item"><span class="tdot"></span> <span data-i18n="trust1">Master 2 · USTHB</span></span>
+        <span class="trust-item"><span class="tdot"></span> <span data-i18n="trust2">CEM → Master</span></span>
+        <span class="trust-item"><span class="tdot"></span> <span data-i18n="trust3">Trilingue AR/FR/EN</span></span>
+        <span class="trust-item"><span class="tdot"></span> <span data-i18n="trust4">Réponse sous 24h</span></span>
+      </div>
+    </div>
+    <div class="petri-block">
+      <div class="petri" aria-hidden="true">
+        <div class="colony c1"></div><div class="colony c2"></div><div class="colony c3"></div>
+        <div class="colony c4"></div><div class="colony c5"></div>
+      </div>
+      <p class="petri-caption mono" data-i18n="petriCaption">FIG. 1 — croissance progressive, comme l'apprentissage</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="stats-bar reveal">
+    <div class="stat-item"><span class="stat-num">CEM → M2</span><span class="stat-label" data-i18n="stat1">Niveaux accompagnés</span></div>
+    <div class="stat-item"><span class="stat-num">USTHB</span><span class="stat-label" data-i18n="stat2">Expertise microbiologie</span></div>
+    <div class="stat-item"><span class="stat-num">&lt; 24h</span><span class="stat-label" data-i18n="stat3">Temps de réponse</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="about">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="aboutTag">À propos</span></span>
+      <h2 data-i18n="aboutTitle">Qui vous accompagne</h2>
+    </div>
+    <div class="about-card reveal">
+      <div class="avatar">AE</div>
+      <div>
+        <h3>Zekraoui Rabah Allaa Eddine</h3>
+        <div class="about-role" data-i18n="aboutRole">Fondateur de BIOSCOPE · Étudiant en Master 2 Microbiologie et Contrôle de Qualité — USTHB</div>
+        <p data-i18n="aboutP1">Titulaire d'une Licence en Microbiologie et actuellement en Master à l'Université des Sciences et de la Technologie Houari Boumédiène (USTHB, Bab Ezzouar), je m'appuie sur une formation académique rigoureuse en sciences de la nature et de la vie pour accompagner mes élèves.</p>
+        <p data-i18n="aboutP2">Mon approche privilégie la compréhension du raisonnement scientifique plutôt que la simple mémorisation : chaque notion est expliquée clairement, avec des exemples concrets, pour construire des bases solides et durables.</p>
+        <div class="credentials">
+          <span data-i18n="cred1">Master 2 · Microbiologie & Contrôle Qualité — USTHB</span>
+          <span data-i18n="cred2">Licence en Microbiologie — USTHB</span>
+          <span data-i18n="cred4">Arabe · Anglais · Français</span>
+        </div>
+      </div>
+    </div>
+    <div class="levels" aria-label="Niveaux accompagnés">
+      <span class="level-pill" data-i18n="lvl1">CEM · BEM</span>
+      <span class="level-pill" data-i18n="lvl2">Lycée · BAC</span>
+      <span class="level-pill" data-i18n="lvl3">Licence (L1 → L3)</span>
+      <span class="level-pill" data-i18n="lvl4">Master (M1 → M2)</span>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="whyTag">Pourquoi me choisir</span></span>
+      <h2 data-i18n="whyTitle">Pourquoi me choisir</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="spec-no">RAISON 01</div>
+        <h3 data-i18n="w1t">Une formation qui correspond au programme</h3>
+        <p data-i18n="w1d">Master 2 en Microbiologie et Contrôle de Qualité à l'USTHB : une expertise directement alignée sur les modules universitaires et sur le programme SNV du CEM et du lycée.</p>
+      </div>
+      <div class="why-card">
+        <div class="spec-no">RAISON 02</div>
+        <h3 data-i18n="w2t">Comprendre plutôt que mémoriser</h3>
+        <p data-i18n="w2d">Chaque séance vise la compréhension du raisonnement scientifique, avec des explications claires et des exemples concrets.</p>
+      </div>
+      <div class="why-card">
+        <div class="spec-no">RAISON 03</div>
+        <h3 data-i18n="w3t">Un accompagnement dans la durée</h3>
+        <p data-i18n="w3d">Du CEM au Master, un seul interlocuteur qui suit la progression de l'élève d'une année à l'autre.</p>
+      </div>
+      <div class="why-card">
+        <div class="spec-no">RAISON 04</div>
+        <h3 data-i18n="w4t">Contact direct et réactif</h3>
+        <p data-i18n="w4d">Disponible sur WhatsApp et par email, avec une réponse habituelle sous 24h — sans intermédiaire.</p>
+      </div>
+      <div class="why-card">
+        <div class="spec-no">RAISON 05</div>
+        <h3 data-i18n="w5t">Des tarifs clairs, annoncés à l'avance</h3>
+        <p data-i18n="w5d">Aucun frais caché : chaque service a un tarif précis, communiqué avant la première séance.</p>
+      </div>
+      <div class="why-card">
+        <div class="spec-no">RAISON 06</div>
+        <h3 data-i18n="w6t">Trilingue</h3>
+        <p data-i18n="w6d">Les séances peuvent se dérouler en arabe, en français ou en anglais, selon la préférence de l'élève.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="testiTag">Témoignages</span></span>
+      <h2 data-i18n="testiTitle">Ce qu'en disent les élèves</h2>
+      <p data-i18n="testiDesc">Les retours des élèves accompagnés jusqu'ici.</p>
+    </div>
+    <div class="carousel-arrows">
+      <button class="arrow-btn" id="testiPrev" aria-label="Précédent">←</button>
+      <button class="arrow-btn" id="testiNext" aria-label="Suivant">→</button>
+    </div>
+    <div class="carousel-wrap reveal">
+      <div class="carousel-track" id="testiTrack">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi1">« Un excellent professeur, capable de transmettre des notions complexes de 
+ avec une clarté remarquable. Mes cours n'ont jamais été aussi simples à comprendre. »</p>
+          <div class="testi-name" data-i18n="testiRole1">Étudiant, Licence 2</div>
+          <div class="testi-role" data-i18n="testiSub1">Module Génétique</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi2">« Une personne formidable et un enseignant hors pair. Grâce à lui, j'ai obtenu une excellente note et découvert un vrai goût pour les sciences de la nature et de la vie. »</p>
+          <div class="testi-name" data-i18n="testiRole2">Élève, Terminale</div>
+          <div class="testi-role" data-i18n="testiSub2">BAC Sciences</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi3">« Un exposé parfaitement structuré, un contenu clair et une excellente note à la clé. Un accompagnement précieux pour bien démarrer à l'université. »</p>
+          <div class="testi-name" data-i18n="testiRole3">Étudiant, Licence 1</div>
+          <div class="testi-role" data-i18n="testiSub3">Exposé</div>
+        </div>
+        <div class="testi-card testi-placeholder">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi4">« Votre prochain témoignage apparaîtra ici. »</p>
+          <div class="testi-name" data-i18n="testiPlaceholderName">— Témoignage à venir</div>
+          <div class="testi-role" data-i18n="testiPlaceholderRole">Ajoutez un retour d'élève</div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="testiDots"></div>
+  </section>
+
+  <section id="services">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="servicesTag">Services</span></span>
+      <h2 data-i18n="servicesTitle">Un accompagnement pour chaque niveau</h2>
+      <p data-i18n="servicesDesc">Du programme SNV algérien à tous les modules de biologie et microbiologie de l'USTHB — chaque service s'adapte au niveau et au module concerné.</p>
+    </div>
+    <div class="carousel-arrows">
+      <button class="arrow-btn" id="svcPrev" aria-label="Précédent">←</button>
+      <button class="arrow-btn" id="svcNext" aria-label="Suivant">→</button>
+    </div>
+    <div class="carousel-wrap reveal">
+      <div class="carousel-track" id="svcTrack">
+      <div class="service-card">
+        <div class="spec-no">ÉCH. 01</div>
+        <h3 data-i18n="s1t">SNV — CEM & Lycée</h3>
+        <p data-i18n="s1d">Cours particuliers en Sciences de la Nature et de la Vie, alignés sur le programme algérien, pour préparer le BEM ou le BAC.</p>
+        <div class="service-meta"><span class="duration mono" data-i18n="s1l">CEM · Lycée</span><a class="ask-btn" href="#contact" data-i18n="askBtn">Demander →</a></div>
+      </div>
+      <div class="service-card">
+        <div class="spec-no">ÉCH. 02</div>
+        <h3 data-i18n="s2t">Biologie & microbiologie — L1 à M2 (USTHB)</h3>
+        <p data-i18n="s2d">Tous les modules du cursus SNV : biologie cellulaire, biochimie, génétique, microbiologie, physiologie, écologie — de la 1ère année de licence au Master 2.</p>
+        <div class="service-meta"><span class="duration mono" data-i18n="s2l">Licence · Master</span><a class="ask-btn" href="#contact" data-i18n="askBtn">Demander →</a></div>
+      </div>
+      <div class="service-card">
+        <div class="spec-no">ÉCH. 03</div>
+        <h3 data-i18n="s3t">TP & rapports de laboratoire</h3>
+        <p data-i18n="s3d">Aide à la compréhension des protocoles, à l'analyse des résultats et à la rédaction de comptes rendus de travaux pratiques.</p>
+        <div class="service-meta"><span class="duration mono" data-i18n="s3l">Licence · Master</span><a class="ask-btn" href="#contact" data-i18n="askBtn">Demander →</a></div>
+      </div>
+      <div class="service-card">
+        <div class="spec-no">ÉCH. 04</div>
+        <h3 data-i18n="s4t">Devoirs & exposés</h3>
+        <p data-i18n="s4d">Aide aux devoirs, exposés et recherches sur des thèmes du vivant et de la nature, avec des explications claires et illustrées.</p>
+        <div class="service-meta"><span class="duration mono" data-i18n="s4l">Tous niveaux</span><a class="ask-btn" href="#contact" data-i18n="askBtn">Demander →</a></div>
+      </div>
+      <div class="service-card">
+        <div class="spec-no">ÉCH. 05</div>
+        <h3 data-i18n="s5t">Préparation aux examens</h3>
+        <p data-i18n="s5d">Révisions ciblées, exercices type-examen et méthodologie pour aborder sereinement le BEM, le BAC ou les examens universitaires.</p>
+        <div class="service-meta"><span class="duration mono" data-i18n="s5l">Tous niveaux</span><a class="ask-btn" href="#contact" data-i18n="askBtn">Demander →</a></div>
+      </div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="svcDots"></div>
+  </section>
+
+  <section id="pricing">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="pricingTag">Tarifs</span></span>
+      <h2 data-i18n="pricingTitle">Tarifs</h2>
+      <p data-i18n="pricingDesc">Des tarifs clairs, adaptés au niveau et au type d'accompagnement.</p>
+    </div>
+    <div class="price-table reveal">
+      <div class="price-row featured">
+        <div class="p-service" data-i18n="pr1s">CEM / Lycée<span class="p-sub" data-i18n="pr1sub">Cours particuliers, préparation BEM/BAC</span></div>
+        <div class="p-duration" data-i18n="pr1d">60 min</div>
+        <div class="p-amount">1000 DA</div>
+      </div>
+      <div class="price-row featured">
+        <div class="p-service" data-i18n="pr2s">Université (Licence &amp; Master)<span class="p-sub" data-i18n="pr2sub">Tous modules, du L1 au M2</span></div>
+        <div class="p-duration" data-i18n="pr2d">60 min</div>
+        <div class="p-amount">1500 DA</div>
+      </div>
+      <div class="price-row">
+        <div class="p-service" data-i18n="pr3s">Exposé<span class="p-sub" data-i18n="pr3sub">Structure, contenu et supports</span></div>
+        <div class="p-duration" data-i18n="pr3d">forfait</div>
+        <div class="p-amount">750 DA</div>
+      </div>
+      <div class="price-row">
+        <div class="p-service" data-i18n="pr4s">Rapport de stage / TP<span class="p-sub" data-i18n="pr4sub">Relecture, structuration, rédaction</span></div>
+        <div class="p-duration" data-i18n="pr4d">forfait</div>
+        <div class="p-amount">350 DA</div>
+      </div>
+      <div class="price-row">
+        <div class="p-service" data-i18n="pr5s">Pack mensuel — CEM / Lycée<span class="p-sub" data-i18n="pr5sub">4 séances, suivi régulier</span></div>
+        <div class="p-duration" data-i18n="pr5d">/ mois</div>
+        <div class="p-amount">3600 DA</div>
+      </div>
+      <div class="price-row">
+        <div class="p-service" data-i18n="pr6s">Pack mensuel — Université<span class="p-sub" data-i18n="pr6sub">4 séances, suivi régulier</span></div>
+        <div class="p-duration" data-i18n="pr6d">/ mois</div>
+        <div class="p-amount">5400 DA</div>
+      </div>
+    </div>
+    <p class="price-note" data-i18n="priceNote">La préparation aux examens et l'aide aux devoirs sont facturées au tarif séance habituel selon le niveau. Les packs mensuels incluent une réduction de 10 % par rapport au tarif à l'unité.</p>
+    <div class="payment-banner reveal">
+      <div class="payment-method">
+        <div class="pm-icon">📱</div>
+        <div class="pm-name" data-i18n="pmBaridi">BaridiMob</div>
+        <div class="pm-desc" data-i18n="pmBaridiDesc">Transfert avant la séance</div>
+      </div>
+      <div class="payment-method">
+        <div class="pm-icon">🏦</div>
+        <div class="pm-name" data-i18n="pmCcp">CCP</div>
+        <div class="pm-desc" data-i18n="pmCcpDesc">Virement, RIP communiqué sur demande</div>
+      </div>
+      <div class="payment-method">
+        <div class="pm-icon">💵</div>
+        <div class="pm-name" data-i18n="pmCash">Espèces</div>
+        <div class="pm-desc" data-i18n="pmCashDesc">Remis en main propre, avant le début de la séance</div>
+      </div>
+    </div>
+    <div class="hero-ctas" style="margin-top:1.5rem;">
+      <a class="btn-wa" href="#contact" data-i18n="priceCta">Réserver une séance</a>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="resTag">Ressources gratuites</span></span>
+      <h2 data-i18n="resTitle">Fiches de révision gratuites</h2>
+      <p data-i18n="resDesc">Quelques supports téléchargeables pour réviser en autonomie. D'autres seront ajoutés régulièrement.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="resource-card">
+        <div class="res-icon">📄</div>
+        <div class="res-info">
+          <div class="res-title" data-i18n="resItem1">expose-mycoplasme</div>
+          <div class="res-sub" data-i18n="resItemSub">PDF </div>
+        </div>
+        <a href="resources/expose-mycoplasme.pdf" data-i18n="resDownload">Télécharger</a>
+      </div>
+      <div class="resource-card">
+        <div class="res-icon">📄</div>
+        <div class="res-info">
+          <div class="res-title" data-i18n="resItem2">tests-biochimiques</div>
+          <div class="res-sub" data-i18n="resItemSub">PDF </div>
+        </div>
+        <a href="resources/tests-biochimiques.pdf" data-i18n="resDownload">Télécharger</a>
+      </div>
+      <div class="resource-card">
+        <div class="res-icon">📄</div>
+        <div class="res-info">
+          <div class="res-title" data-i18n="resItem3">Fiche — Méthodologie BEM/BAC SNV</div>
+          <div class="res-sub" data-i18n="resItemSub">PDF · à ajouter</div>
+        </div>
+        <a href="resources/fiche-methodologie.pdf" data-i18n="resDownload">Télécharger</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="processTag">Déroulement</span></span>
+      <h2 data-i18n="processTitle">Comment ça se passe</h2>
+    </div>
+    <div class="process reveal">
+      <div class="step"><h3 data-i18n="st1t">Vous décrivez votre besoin</h3><p data-i18n="st1d">Niveau, module et ce sur quoi vous voulez travailler.</p></div>
+      <div class="step"><h3 data-i18n="st2t">On convient d'un créneau</h3><p data-i18n="st2d">En ligne ou en présentiel, selon votre préférence.</p></div>
+      <div class="step"><h3 data-i18n="st3t">Séance de travail</h3><p data-i18n="st3d">Explication, exercices et réponses à vos questions.</p></div>
+      <div class="step"><h3 data-i18n="st4t">Suivi</h3><p data-i18n="st4d">Vous restez joignable pour vos questions entre les séances.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="contactTag">Contact</span></span>
+      <h2 data-i18n="contactTitle">Prendre contact</h2>
+      <p data-i18n="contactDesc">Choisissez WhatsApp ou email — le formulaire s'adapte à votre choix.</p>
+    </div>
+    <div class="contact-wrap reveal">
+      <div class="contact-note">
+        <h3 data-i18n="contactNoteTitle">Écrire directement</h3>
+        <p data-i18n="contactNoteDesc">Vous pouvez aussi me contacter directement, sans passer par le formulaire.</p>
+        <a class="wa-direct" href="https://wa.me/213773939496" target="_blank" rel="noopener">💬 <span data-i18n="waLabel">Ouvrir WhatsApp</span></a>
+        <a class="wa-direct" href="mailto:rabahallaa666@gmail.com">✉️ <span data-i18n="emailLabel">Envoyer un email</span></a>
+        <p style="margin-top:1.5rem; font-size:.8rem;" data-i18n="responseNote">Réponse habituelle sous 24h.</p>
+      </div>
+      <form id="bookingForm">
+        <div class="method-toggle" role="group" aria-label="Méthode de contact">
+          <button type="button" class="method-btn active" data-method="whatsapp">💬 WhatsApp</button>
+          <button type="button" class="method-btn" data-method="email">✉️ Email</button>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" data-i18n="labelName">Nom complet</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="level" data-i18n="labelLevel">Niveau</label>
+            <select id="level" name="level" required>
+              <option data-i18n="optCem">CEM</option>
+              <option data-i18n="optLycee">Lycée</option>
+              <option data-i18n="optLicence">Licence</option>
+              <option data-i18n="optMaster">Master</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" id="emailFieldGroup" style="display:none;">
+          <label for="email" data-i18n="labelEmail">Votre email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="service" data-i18n="labelService">Service souhaité</label>
+          <select id="service" name="service" required>
+            <option data-i18n="svc1">SNV — CEM & Lycée</option>
+            <option data-i18n="svc2">Biologie & microbiologie universitaire</option>
+            <option data-i18n="svc3">TP & rapports de laboratoire</option>
+            <option data-i18n="svc4">Devoirs & exposés</option>
+            <option data-i18n="svc5">Préparation aux examens</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pack" data-i18n="labelPack">Formule tarifaire</label>
+          <select id="pack" name="pack" required>
+            <option value="CEM / Lycée — 1000 DA / séance" data-i18n="pack1">CEM / Lycée — 1000 DA / séance (60 min)</option>
+            <option value="Université — 1500 DA / séance" data-i18n="pack2">Université — 1500 DA / séance (60 min)</option>
+            <option value="Exposé — 750 DA" data-i18n="pack3">Exposé — 750 DA (forfait)</option>
+            <option value="Rapport de stage / TP — 350 DA" data-i18n="pack4">Rapport de stage / TP — 350 DA (forfait)</option>
+            <option value="Pack mensuel CEM/Lycée — 3600 DA (-10%)" data-i18n="pack5">Pack mensuel CEM/Lycée — 3600 DA (-10%)</option>
+            <option value="Pack mensuel Université — 5400 DA (-10%)" data-i18n="pack6">Pack mensuel Université — 5400 DA (-10%)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="preferredDate" data-i18n="labelDate">Date souhaitée (optionnel)</label>
+          <input type="datetime-local" id="preferredDate" name="preferredDate">
+        </div>
+        <div class="form-group">
+          <label for="notes" data-i18n="labelNotes">Votre besoin en quelques mots</label>
+          <textarea id="notes" name="notes"></textarea>
+        </div>
+        <p style="font-size:.78rem; color:var(--ink-soft); margin-bottom:1rem;" data-i18n="paymentReminder">Paiement par CCP, BaridiMob ou en espèces, à régler avant le début de la séance.</p>
+        <button type="submit" id="submitBtn" class="btn-wa" style="width:100%; justify-content:center; border:none; cursor:pointer;" data-i18n="submitWa">Envoyer via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="account">
+    <div class="section-head reveal">
+      <span class="tag"><span class="dot"></span> <span data-i18n="accountTag">Mon espace</span></span>
+      <h2 data-i18n="accountTitle">Suivez vos séances</h2>
+      <p data-i18n="accountDesc">Créez un compte pour retrouver l'historique de vos réservations et l'état de vos paiements.</p>
+    </div>
+
+    <div id="authBlock" class="contact-wrap reveal" style="grid-template-columns:1fr; max-width:480px;">
+      <div>
+        <div class="auth-tabs" role="group">
+          <button type="button" class="method-btn active" data-tab="signin" id="tabSignin" data-i18n="tabSignin">Se connecter</button>
+          <button type="button" class="method-btn" data-tab="signup" id="tabSignup" data-i18n="tabSignup">Créer un compte</button>
+        </div>
+
+        <form id="signinForm" class="auth-panel active">
+          <div class="form-group">
+            <label for="siEmail" data-i18n="labelEmail">Votre email</label>
+            <input type="email" id="siEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="siPass" data-i18n="labelPassword">Mot de passe</label>
+            <input type="password" id="siPass" required>
+          </div>
+          <button type="submit" class="btn-wa" style="width:100%; justify-content:center; border:none;" data-i18n="btnSignin">Se connecter</button>
+          <p class="auth-error" id="siError"></p>
+        </form>
+
+        <form id="signupForm" class="auth-panel">
+          <div class="form-group">
+            <label for="suName" data-i18n="labelName">Nom complet</label>
+            <input type="text" id="suName" required>
+          </div>
+          <div class="form-group">
+            <label for="suEmail" data-i18n="labelEmail">Votre email</label>
+            <input type="email" id="suEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="suPass" data-i18n="labelPassword">Mot de passe</label>
+            <input type="password" id="suPass" minlength="6" required>
+          </div>
+          <button type="submit" class="btn-wa" style="width:100%; justify-content:center; border:none;" data-i18n="btnSignup">Créer mon compte</button>
+          <p class="auth-error" id="suError"></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="accountLoggedIn" class="account-loggedin">
+      <div class="account-header">
+        <div class="who" id="whoLabel"></div>
+        <button class="btn-outline" id="signOutBtn" data-i18n="btnSignout">Se déconnecter</button>
+      </div>
+      <div class="res-table" id="resTable"></div>
+
+      <div id="adminPanel" class="admin-panel" style="display:none;">
+        <div class="section-head" style="margin-bottom:1.5rem;">
+          <span class="tag"><span class="dot"></span> <span data-i18n="adminTag">Admin</span></span>
+          <h2 data-i18n="adminTitle">Toutes les réservations</h2>
+        </div>
+        <div class="res-table" id="adminTable"></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="scope"></span> BIOSCOPE</div>
+    <p data-i18n="footerText">&copy; 2026 BIOSCOPE — Zekraoui Rabah Allaa Eddine. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Floating quick-nav -->
+<nav class="quick-nav" aria-label="Navigation rapide">
+  <a href="#about" data-label="À propos" data-target="about"></a>
+  <a href="#why" data-label="Pourquoi moi" data-target="why"></a>
+  <a href="#services" data-label="Services" data-target="services"></a>
+  <a href="#pricing" data-label="Tarifs" data-target="pricing"></a>
+  <a href="#process" data-label="Déroulement" data-target="process"></a>
+  <a href="#contact" data-label="Contact" data-target="contact"></a>
+  <a href="#account" data-label="Mon espace" data-target="account"></a>
+</nav>
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+
+<div class="mobile-cta-bar">
+  <a class="btn-outline" href="https://wa.me/213773939496" target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="btn-wa" href="#contact" data-i18n="navBook">Réserver</a>
+</div>
+
+<div class="toast" id="toast"><span class="tick">✓</span><span id="toastMsg"></span></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+const translations = {
+  fr: {
+    navAbout:"À propos", navWhy:"Pourquoi moi", navTesti:"Avis", navServices:"Services", navPricing:"Tarifs", navContact:"Contact", navBook:"Réserver", navAccount:"Mon espace",
+    headerLogin:"Se connecter",
+    heroTag:"Sciences de la Nature et de la Vie · CEM → Université",
+    heroTitle:"Comprendre les sciences de la nature et de la vie, une culture à la fois.",
+    heroDesc:"Je m'appelle Allaa Eddine, étudiant en Master 2 Microbiologie et Contrôle de Qualité à l'USTHB. J'accompagne les élèves du système algérien — SNV au CEM et au lycée — ainsi que les étudiants en biologie et microbiologie à l'université, de la L1 au M2.",
+    heroCta1:"Discuter sur WhatsApp", heroCta2:"Voir les services",
+    trust1:"Master 2 · USTHB", trust2:"CEM → Master", trust3:"Trilingue AR/FR/EN", trust4:"Réponse sous 24h",
+    petriCaption:"FIG. 1 — croissance progressive, comme l'apprentissage",
+    aboutTag:"À propos", aboutTitle:"Qui vous accompagne",
+    aboutRole:"Fondateur de BIOSCOPE · Étudiant en Master 2 Microbiologie et Contrôle de Qualité — USTHB",
+    aboutP1:"Titulaire d'une Licence en Microbiologie et actuellement en Master à l'Université des Sciences et de la Technologie Houari Boumédiène (USTHB, Bab Ezzouar), je m'appuie sur une formation académique rigoureuse en sciences de la nature et de la vie pour accompagner mes élèves.",
+    aboutP2:"Mon approche privilégie la compréhension du raisonnement scientifique plutôt que la simple mémorisation : chaque notion est expliquée clairement, avec des exemples concrets, pour construire des bases solides et durables.",
+    cred1:"Master 2 · Microbiologie & Contrôle Qualité — USTHB", cred2:"Licence en Microbiologie — USTHB",
+    cred4:"Arabe · Anglais · Français",
+    lvl1:"CEM · BEM", lvl2:"Lycée · BAC", lvl3:"Licence (L1 → L3)", lvl4:"Master (M1 → M2)",
+    whyTag:"Pourquoi me choisir", whyTitle:"Pourquoi me choisir",
+    w1t:"Une formation qui correspond au programme", w1d:"Master 2 en Microbiologie et Contrôle de Qualité à l'USTHB : une expertise directement alignée sur les modules universitaires et sur le programme SNV du CEM et du lycée.",
+    w2t:"Comprendre plutôt que mémoriser", w2d:"Chaque séance vise la compréhension du raisonnement scientifique, avec des explications claires et des exemples concrets.",
+    w3t:"Un accompagnement dans la durée", w3d:"Du CEM au Master, un seul interlocuteur qui suit la progression de l'élève d'une année à l'autre.",
+    w4t:"Contact direct et réactif", w4d:"Disponible sur WhatsApp et par email, avec une réponse habituelle sous 24h — sans intermédiaire.",
+    w5t:"Des tarifs clairs, annoncés à l'avance", w5d:"Aucun frais caché : chaque service a un tarif précis, communiqué avant la première séance.",
+    w6t:"Trilingue", w6d:"Les séances peuvent se dérouler en arabe, en français ou en anglais, selon la préférence de l'élève.",
+    servicesTag:"Services", servicesTitle:"Un accompagnement pour chaque niveau",
+    servicesDesc:"Du programme SNV algérien à tous les modules de biologie et microbiologie de l'USTHB — chaque service s'adapte au niveau et au module concerné.",
+    s1t:"SNV — CEM & Lycée", s1d:"Cours particuliers en Sciences de la Nature et de la Vie, alignés sur le programme algérien, pour préparer le BEM ou le BAC.", s1l:"CEM · Lycée",
+    s2t:"Biologie & microbiologie — L1 à M2 (USTHB)", s2d:"Tous les modules du cursus SNV : biologie cellulaire, biochimie, génétique, microbiologie, physiologie, écologie — de la 1ère année de licence au Master 2.", s2l:"Licence · Master",
+    s3t:"TP & rapports de laboratoire", s3d:"Aide à la compréhension des protocoles, à l'analyse des résultats et à la rédaction de comptes rendus de travaux pratiques.", s3l:"Licence · Master",
+    s4t:"Devoirs & exposés", s4d:"Aide aux devoirs, exposés et recherches sur des thèmes du vivant et de la nature, avec des explications claires et illustrées.", s4l:"Tous niveaux",
+    s5t:"Préparation aux examens", s5d:"Révisions ciblées, exercices type-examen et méthodologie pour aborder sereinement le BEM, le BAC ou les examens universitaires.", s5l:"Tous niveaux",
+    askBtn:"Demander →",
+    pricingTag:"Tarifs", pricingTitle:"Tarifs", pricingDesc:"Des tarifs clairs, adaptés au niveau et au type d'accompagnement.",
+    pr1s:"CEM / Lycée", pr1sub:"Cours particuliers, préparation BEM/BAC", pr1d:"60 min",
+    pr2s:"Université (Licence & Master)", pr2sub:"Tous modules, du L1 au M2", pr2d:"60 min",
+    pr3s:"Exposé", pr3sub:"Structure, contenu et supports", pr3d:"forfait",
+    pr4s:"Rapport de stage / TP", pr4sub:"Relecture, structuration, rédaction", pr4d:"forfait",
+    pr5s:"Pack mensuel — CEM / Lycée", pr5sub:"4 séances, suivi régulier", pr5d:"/ mois",
+    pr6s:"Pack mensuel — Université", pr6sub:"4 séances, suivi régulier", pr6d:"/ mois",
+    priceCta:"Réserver une séance", priceNote:"La préparation aux examens et l'aide aux devoirs sont facturées au tarif séance habituel selon le niveau. Les packs mensuels incluent une réduction de 10 % par rapport au tarif à l'unité.",
+    processTag:"Déroulement", processTitle:"Comment ça se passe",
+    st1t:"Vous décrivez votre besoin", st1d:"Niveau, module et ce sur quoi vous voulez travailler.",
+    st2t:"On convient d'un créneau", st2d:"En ligne ou en présentiel, selon votre préférence.",
+    st3t:"Séance de travail", st3d:"Explication, exercices et réponses à vos questions.",
+    st4t:"Suivi", st4d:"Vous restez joignable pour vos questions entre les séances.",
+    contactTag:"Contact", contactTitle:"Prendre contact", contactDesc:"Choisissez WhatsApp ou email — le formulaire s'adapte à votre choix.",
+    contactNoteTitle:"Écrire directement", contactNoteDesc:"Vous pouvez aussi me contacter directement, sans passer par le formulaire.",
+    waLabel:"Ouvrir WhatsApp", emailLabel:"Envoyer un email", responseNote:"Réponse habituelle sous 24h.",
+    labelName:"Nom complet", labelLevel:"Niveau", labelEmail:"Votre email", labelService:"Service souhaité", labelNotes:"Votre besoin en quelques mots",
+    optCem:"CEM", optLycee:"Lycée", optLicence:"Licence", optMaster:"Master",
+    svc1:"SNV — CEM & Lycée", svc2:"Biologie & microbiologie universitaire", svc3:"TP & rapports de laboratoire", svc4:"Devoirs & exposés", svc5:"Préparation aux examens",
+    submitWa:"Envoyer via WhatsApp", submitEmail:"Envoyer par email",
+    accountTag:"Mon espace", accountTitle:"Suivez vos séances", accountDesc:"Créez un compte pour retrouver l'historique de vos réservations et l'état de vos paiements.",
+    tabSignin:"Se connecter", tabSignup:"Créer un compte", labelPassword:"Mot de passe",
+    btnSignin:"Se connecter", btnSignup:"Créer mon compte", btnSignout:"Se déconnecter",
+    authErrGeneric:"Une erreur est survenue. Vérifiez vos identifiants.", authErrSignup:"Impossible de créer le compte. L'email est peut-être déjà utilisé.",
+    resDate:"Date", resNone:"Vous n'avez pas encore de réservation.", resPaid:"Payé", resPending:"En attente",
+    toastEmailSent:"Message envoyé — je vous réponds sous 24h.", toastEmailError:"Échec de l'envoi. Réessayez ou utilisez WhatsApp.",
+    toastWaRedirect:"Redirection vers WhatsApp…", toastSignedUp:"Compte créé avec succès.", toastSignedIn:"Connexion réussie.", toastSignedOut:"Déconnecté.",
+    stat1:"Niveaux accompagnés", stat2:"Expertise microbiologie", stat3:"Temps de réponse",
+    testiTag:"Témoignages", testiTitle:"Ce qu'en disent les élèves", testiDesc:"Les retours des élèves accompagnés jusqu'ici.",
+    testi1:"« Un excellent professeur, capable de transmettre des notions complexes de génétique avec une clarté remarquable. Mes cours n'ont jamais été aussi simples à comprendre. »",
+    testi2:"« Une personne formidable et un enseignant hors pair. Grâce à lui, j'ai obtenu une excellente note et découvert un vrai goût pour les sciences de la nature et de la vie. »",
+    testi3:"« Un exposé parfaitement structuré, un contenu clair et une excellente note à la clé. Un accompagnement précieux pour bien démarrer à l'université. »",
+    testi4:"« Votre prochain témoignage apparaîtra ici. »",
+    testiRole1:"Étudiant, Licence 2", testiSub1:"Module Génétique",
+    testiRole2:"Élève, Terminale", testiSub2:"BAC Sciences",
+    testiRole3:"Étudiant, Licence 1", testiSub3:"Exposé",
+    testiPlaceholderName:"— Témoignage à venir", testiPlaceholderRole:"Ajoutez un retour d'élève",
+    resTag:"Ressources gratuites", resTitle:"Fiches de révision gratuites", resDesc:"Quelques supports téléchargeables pour réviser en autonomie. D'autres seront ajoutés régulièrement.",
+    resItem1:"Fiche — Bases de microbiologie", resItem2:"Fiche — Génétique, notions clés", resItem3:"Fiche — Méthodologie BEM/BAC SNV",
+    resItemSub:"PDF · à ajouter", resDownload:"Télécharger",
+    pmBaridi:"BaridiMob", pmBaridiDesc:"Transfert avant la séance", pmCcp:"CCP", pmCcpDesc:"Virement, RIP communiqué sur demande",
+    pmCash:"Espèces", pmCashDesc:"Remis en main propre, avant le début de la séance",
+    labelPack:"Formule tarifaire",
+    pack1:"CEM / Lycée — 1000 DA / séance (60 min)", pack2:"Université — 1500 DA / séance (60 min)", pack3:"Exposé — 750 DA (forfait)",
+    pack4:"Rapport de stage / TP — 350 DA (forfait)", pack5:"Pack mensuel CEM/Lycée — 3600 DA (-10%)", pack6:"Pack mensuel Université — 5400 DA (-10%)",
+    labelDate:"Date souhaitée (optionnel)", paymentReminder:"Paiement par CCP, BaridiMob ou en espèces, à régler avant le début de la séance.",
+    adminTag:"Admin", adminTitle:"Toutes les réservations",
+    cancelBtn:"Annuler", resUnpaid:"Non payé", resCancelled:"Annulé",
+    toastCancelled:"Réservation annulée.", toastCancelError:"Impossible d'annuler. Réessayez.", toastStatusUpdated:"Statut mis à jour.",
+    confirmCancel:"Confirmer l'annulation de cette réservation ?",
+    footerText:"© 2026 BIOSCOPE — Zekraoui Rabah Allaa Eddine. Tous droits réservés."
+  },
+  en: {
+    navAbout:"About", navWhy:"Why me", navTesti:"Reviews", navServices:"Services", navPricing:"Pricing", navContact:"Contact", navBook:"Book now", navAccount:"My account",
+    headerLogin:"Sign in",
+    heroTag:"Natural & Life Sciences · Middle school → University",
+    heroTitle:"Understanding the natural and life sciences, one culture at a time.",
+    heroDesc:"I'm Allaa Eddine, a Master's student in Microbiology and Quality Control at USTHB. I support students in the Algerian system — Natural & Life Sciences (SNV) in middle and high school — as well as biology and microbiology students at university, from first year to Master's.",
+    heroCta1:"Chat on WhatsApp", heroCta2:"See services",
+    trust1:"Master's · USTHB", trust2:"Middle school → Master's", trust3:"Trilingual AR/FR/EN", trust4:"Reply within 24h",
+    petriCaption:"FIG. 1 — steady growth, just like learning",
+    aboutTag:"About", aboutTitle:"Who's behind this",
+    aboutRole:"Founder of BIOSCOPE · Master's student in Microbiology and Quality Control — USTHB",
+    aboutP1:"I hold a Bachelor's degree in Microbiology and am currently completing a Master's at the University of Science and Technology Houari Boumediene (USTHB, Bab Ezzouar), drawing on rigorous academic training in the natural and life sciences to support my students.",
+    aboutP2:"My approach favors understanding scientific reasoning over rote memorization: every concept is explained clearly, with concrete examples, to build solid and lasting foundations.",
+    cred1:"Master's · Microbiology & Quality Control — USTHB", cred2:"Bachelor's in Microbiology — USTHB",
+    cred4:"Arabic · English · French",
+    lvl1:"Middle school", lvl2:"High school", lvl3:"Bachelor's (Y1 → Y3)", lvl4:"Master's (Y1 → Y2)",
+    whyTag:"Why choose me", whyTitle:"Why choose me",
+    w1t:"Training that matches the curriculum", w1d:"A Master's in Microbiology and Quality Control at USTHB: expertise directly aligned with university modules and the SNV curriculum in middle and high school.",
+    w2t:"Understanding over memorizing", w2d:"Every session aims at genuine understanding of scientific reasoning, with clear explanations and concrete examples.",
+    w3t:"Support over the long term", w3d:"From middle school to a Master's degree, a single point of contact who follows the student's progress year after year.",
+    w4t:"Direct, responsive contact", w4d:"Available on WhatsApp and by email, with a usual reply time under 24 hours — no intermediaries.",
+    w5t:"Clear, upfront pricing", w5d:"No hidden fees: every service has a precise rate, communicated before the first session.",
+    w6t:"Trilingual", w6d:"Sessions can be conducted in Arabic, French, or English, according to the student's preference.",
+    servicesTag:"Services", servicesTitle:"Support at every level",
+    servicesDesc:"From the Algerian SNV curriculum to every biology and microbiology module at USTHB — each service adapts to the level and the module.",
+    s1t:"SNV — Middle & high school", s1d:"Private lessons in Natural & Life Sciences, aligned with the Algerian curriculum, to prepare for the BEM or BAC exams.", s1l:"Middle · high school",
+    s2t:"Biology & microbiology — Year 1 to Master's (USTHB)", s2d:"Every module of the SNV curriculum: cell biology, biochemistry, genetics, microbiology, physiology, ecology — from first-year Bachelor's to Master's 2.", s2l:"Bachelor's · Master's",
+    s3t:"Lab work & reports", s3d:"Help understanding lab protocols, analyzing results, and writing practical work reports.", s3l:"Bachelor's · Master's",
+    s4t:"Homework & presentations", s4d:"Help with homework, presentations, and research on life-science topics, with clear, illustrated explanations.", s4l:"All levels",
+    s5t:"Exam preparation", s5d:"Focused revision, exam-style exercises, and methodology to confidently tackle the BEM, BAC, or university exams.", s5l:"All levels",
+    askBtn:"Ask →",
+    pricingTag:"Pricing", pricingTitle:"Pricing", pricingDesc:"Clear rates, matched to the level and type of support.",
+    pr1s:"Middle / high school", pr1sub:"Private lessons, BEM/BAC preparation", pr1d:"60 min",
+    pr2s:"University (Bachelor's & Master's)", pr2sub:"All modules, Year 1 to Master's 2", pr2d:"60 min",
+    pr3s:"Presentation (exposé)", pr3sub:"Structure, content, and materials", pr3d:"flat rate",
+    pr4s:"Internship / lab report", pr4sub:"Review, structure, and writing", pr4d:"flat rate",
+    pr5s:"Monthly pack — Middle / high school", pr5sub:"4 sessions, regular follow-up", pr5d:"/ month",
+    pr6s:"Monthly pack — University", pr6sub:"4 sessions, regular follow-up", pr6d:"/ month",
+    priceCta:"Book a session", priceNote:"Exam preparation and homework help are billed at the standard session rate for the relevant level. Monthly packs include a 10% discount on the per-session rate.",
+    processTag:"Process", processTitle:"How it works",
+    st1t:"You describe your need", st1d:"Level, module, and what you want to work on.",
+    st2t:"We agree on a time", st2d:"Online or in person, whichever you prefer.",
+    st3t:"Working session", st3d:"Explanations, exercises, and answers to your questions.",
+    st4t:"Follow-up", st4d:"You can reach me with questions between sessions.",
+    contactTag:"Contact", contactTitle:"Get in touch", contactDesc:"Choose WhatsApp or email — the form adapts to your choice.",
+    contactNoteTitle:"Write directly", contactNoteDesc:"You can also reach me directly, without the form.",
+    waLabel:"Open WhatsApp", emailLabel:"Send an email", responseNote:"Usual reply time: under 24h.",
+    labelName:"Full name", labelLevel:"Level", labelEmail:"Your email", labelService:"Service needed", labelNotes:"Your need, briefly",
+    optCem:"Middle school", optLycee:"High school", optLicence:"Bachelor's", optMaster:"Master's",
+    svc1:"SNV — Middle & high school", svc2:"University biology & microbiology", svc3:"Lab work & reports", svc4:"Homework & presentations", svc5:"Exam preparation",
+    submitWa:"Send via WhatsApp", submitEmail:"Send by email",
+    accountTag:"My account", accountTitle:"Track your sessions", accountDesc:"Create an account to see your booking history and payment status.",
+    tabSignin:"Sign in", tabSignup:"Create account", labelPassword:"Password",
+    btnSignin:"Sign in", btnSignup:"Create my account", btnSignout:"Sign out",
+    authErrGeneric:"Something went wrong. Check your credentials.", authErrSignup:"Couldn't create the account. This email may already be in use.",
+    resDate:"Date", resNone:"You don't have any bookings yet.", resPaid:"Paid", resPending:"Pending",
+    toastEmailSent:"Message sent — I'll reply within 24h.", toastEmailError:"Sending failed. Try again or use WhatsApp.",
+    toastWaRedirect:"Redirecting to WhatsApp…", toastSignedUp:"Account created successfully.", toastSignedIn:"Signed in successfully.", toastSignedOut:"Signed out.",
+    stat1:"Levels covered", stat2:"Microbiology expertise", stat3:"Reply time",
+    testiTag:"Testimonials", testiTitle:"What students say", testiDesc:"Feedback from students supported so far.",
+    testi1:"\u201cAn excellent teacher, able to explain complex genetics concepts with remarkable clarity. My lessons have never been easier to understand.\u201d",
+    testi2:"\u201cA wonderful person and an outstanding teacher. Thanks to him, I got an excellent grade and discovered a real interest in the natural and life sciences.\u201d",
+    testi3:"\u201cA perfectly structured presentation, clear content, and an excellent grade to show for it. Invaluable support for starting out at university.\u201d",
+    testi4:"\u201cYour next testimonial will appear here.\u201d",
+    testiRole1:"Student, Bachelor's Year 2", testiSub1:"Genetics module",
+    testiRole2:"Student, Final year", testiSub2:"BAC Sciences",
+    testiRole3:"Student, Bachelor's Year 1", testiSub3:"Presentation",
+    testiPlaceholderName:"— Testimonial coming soon", testiPlaceholderRole:"Add a student review",
+    resTag:"Free resources", resTitle:"Free revision sheets", resDesc:"A few downloadable resources for independent revision. More will be added regularly.",
+    resItem1:"Sheet — Microbiology basics", resItem2:"Sheet — Genetics, key concepts", resItem3:"Sheet — BEM/BAC SNV methodology",
+    resItemSub:"PDF · to be added", resDownload:"Download",
+    pmBaridi:"BaridiMob", pmBaridiDesc:"Transfer before the session", pmCcp:"CCP", pmCcpDesc:"Bank transfer, account number on request",
+    pmCash:"Cash", pmCashDesc:"Handed in person, before the session starts",
+    labelPack:"Pricing plan",
+    pack1:"Middle/high school — 1000 DA / session (60 min)", pack2:"University — 1500 DA / session (60 min)", pack3:"Presentation — 750 DA (flat rate)",
+    pack4:"Internship/lab report — 350 DA (flat rate)", pack5:"Monthly pack — Middle/high school — 3600 DA (-10%)", pack6:"Monthly pack — University — 5400 DA (-10%)",
+    labelDate:"Preferred date (optional)", paymentReminder:"Payment by CCP, BaridiMob, or cash, to be settled before the session starts.",
+    adminTag:"Admin", adminTitle:"All reservations",
+    cancelBtn:"Cancel", resUnpaid:"Unpaid", resCancelled:"Cancelled",
+    toastCancelled:"Reservation cancelled.", toastCancelError:"Couldn't cancel. Try again.", toastStatusUpdated:"Status updated.",
+    confirmCancel:"Confirm cancelling this reservation?",
+    footerText:"© 2026 BIOSCOPE — Zekraoui Rabah Allaa Eddine. All rights reserved."
+  },
+  ar: {
+    navAbout:"من أنا", navWhy:"لماذا أنا", navTesti:"آراء", navServices:"الخدمات", navPricing:"الأسعار", navContact:"تواصل", navBook:"احجز الآن", navAccount:"حسابي",
+    headerLogin:"تسجيل الدخول",
+    heroTag:"علوم الطبيعة والحياة · من المتوسط إلى الجامعة",
+    heroTitle:"فهم علوم الطبيعة والحياة، خطوة بخطوة.",
+    heroDesc:"أنا علاء الدين، طالب ماستر في علم الأحياء الدقيقة ومراقبة الجودة بجامعة USTHB. أرافق التلاميذ في النظام الجزائري — مادة علوم الطبيعة والحياة في المتوسط والثانوي — وكذلك طلبة البيولوجيا وعلم الأحياء الدقيقة في الجامعة، من السنة الأولى ليسانس إلى الماستر الثاني.",
+    heroCta1:"تحدث عبر واتساب", heroCta2:"شاهد الخدمات",
+    trust1:"ماستر 2 · USTHB", trust2:"من المتوسط إلى الماستر", trust3:"ثلاثي اللغة", trust4:"رد خلال 24 ساعة",
+    petriCaption:"شكل 1 — نمو تدريجي، تماماً كالتعلّم",
+    aboutTag:"من أنا", aboutTitle:"من يرافقك",
+    aboutRole:"مؤسس BIOSCOPE · طالب ماستر في علم الأحياء الدقيقة ومراقبة الجودة — USTHB",
+    aboutP1:"حاصل على ليسانس في علم الأحياء الدقيقة، وأتابع حالياً دراسة الماستر بجامعة العلوم والتكنولوجيا هواري بومدين (USTHB، باب الزوار)، وأعتمد على تكوين أكاديمي دقيق في علوم الطبيعة والحياة لمرافقة تلاميذي وطلبتي.",
+    aboutP2:"تقوم منهجيتي على فهم المنطق العلمي بدل الحفظ فقط: يتم شرح كل فكرة بوضوح، مع أمثلة ملموسة، لبناء أسس متينة ودائمة.",
+    cred1:"ماستر 2 · علم الأحياء الدقيقة ومراقبة الجودة — USTHB", cred2:"ليسانس في علم الأحياء الدقيقة — USTHB",
+    cred4:"العربية · الإنجليزية · الفرنسية",
+    lvl1:"المتوسط", lvl2:"الثانوي", lvl3:"ليسانس (سنة 1 → 3)", lvl4:"ماستر (سنة 1 → 2)",
+    whyTag:"لماذا تختارني", whyTitle:"لماذا تختارني",
+    w1t:"تكوين متوافق مع البرنامج", w1d:"ماستر في علم الأحياء الدقيقة ومراقبة الجودة بجامعة USTHB: خبرة متوافقة مباشرة مع الوحدات الجامعية وبرنامج علوم الطبيعة والحياة في المتوسط والثانوي.",
+    w2t:"الفهم بدل الحفظ", w2d:"كل حصة تهدف إلى الفهم الحقيقي للمنطق العلمي، بشرح واضح وأمثلة ملموسة.",
+    w3t:"مرافقة على المدى الطويل", w3d:"من المتوسط إلى الماستر، محاور واحد يتابع تقدم التلميذ أو الطالب من سنة إلى أخرى.",
+    w4t:"تواصل مباشر وسريع", w4d:"متوفر عبر واتساب والبريد الإلكتروني، مع رد عادة خلال 24 ساعة — دون وسيط.",
+    w5t:"أسعار واضحة ومعلنة مسبقاً", w5d:"لا رسوم مخفية: لكل خدمة سعر دقيق، يُعلن قبل الحصة الأولى.",
+    w6t:"ثلاثي اللغة", w6d:"يمكن أن تُجرى الحصص باللغة العربية أو الفرنسية أو الإنجليزية، حسب رغبة التلميذ أو الطالب.",
+    servicesTag:"الخدمات", servicesTitle:"مرافقة لكل مستوى",
+    servicesDesc:"من برنامج علوم الطبيعة والحياة الجزائري إلى جميع وحدات البيولوجيا وعلم الأحياء الدقيقة بجامعة USTHB — كل خدمة تتكيف مع المستوى والوحدة.",
+    s1t:"علوم الطبيعة والحياة — المتوسط والثانوي", s1d:"دروس خصوصية في مادة علوم الطبيعة والحياة، متوافقة مع البرنامج الجزائري، للتحضير لشهادتي التعليم المتوسط والبكالوريا.", s1l:"المتوسط · الثانوي",
+    s2t:"البيولوجيا وعلم الأحياء الدقيقة — من السنة 1 إلى الماستر 2 (USTHB)", s2d:"جميع وحدات تخصص علوم الطبيعة والحياة: البيولوجيا الخلوية، الكيمياء الحيوية، الوراثة، علم الأحياء الدقيقة، الفيزيولوجيا، البيئة — من السنة الأولى ليسانس إلى الماستر الثاني.", s2l:"ليسانس · ماستر",
+    s3t:"الأعمال التطبيقية والتقارير المخبرية", s3d:"مساعدة في فهم البروتوكولات المخبرية، تحليل النتائج وكتابة تقارير الأعمال التطبيقية.", s3l:"ليسانس · ماستر",
+    s4t:"الواجبات والعروض", s4d:"مساعدة في الواجبات والعروض والبحوث حول مواضيع الأحياء والطبيعة، بشرح واضح ومصوّر.", s4l:"جميع المستويات",
+    s5t:"التحضير للامتحانات", s5d:"مراجعات مركزة وتمارين على نمط الامتحان ومنهجية لخوض شهادة التعليم المتوسط أو البكالوريا أو امتحانات الجامعة بثقة.", s5l:"جميع المستويات",
+    askBtn:"اطلب ←",
+    pricingTag:"الأسعار", pricingTitle:"الأسعار", pricingDesc:"أسعار واضحة، مناسبة للمستوى ونوع المرافقة.",
+    pr1s:"المتوسط / الثانوي", pr1sub:"دروس خصوصية، تحضير BEM/BAC", pr1d:"60 دقيقة",
+    pr2s:"الجامعة (ليسانس وماستر)", pr2sub:"جميع الوحدات، من السنة 1 إلى الماستر 2", pr2d:"60 دقيقة",
+    pr3s:"عرض (Exposé)", pr3sub:"هيكلة، محتوى ودعائم", pr3d:"سعر ثابت",
+    pr4s:"تقرير تربص / أعمال تطبيقية", pr4sub:"مراجعة، هيكلة وتحرير", pr4d:"سعر ثابت",
+    pr5s:"باقة شهرية — المتوسط / الثانوي", pr5sub:"4 حصص، متابعة منتظمة", pr5d:"/ شهر",
+    pr6s:"باقة شهرية — الجامعة", pr6sub:"4 حصص، متابعة منتظمة", pr6d:"/ شهر",
+    priceCta:"احجز حصة", priceNote:"يُحتسب التحضير للامتحانات ومساعدة الواجبات بسعر الحصة العادي حسب المستوى. الباقات الشهرية تتضمن خصماً بنسبة 10% مقارنة بالسعر بالوحدة.",
+    processTag:"سير العمل", processTitle:"كيف تسير الحصص",
+    st1t:"تصف لي حاجتك", st1d:"المستوى، الوحدة، وما تريد العمل عليه.",
+    st2t:"نتفق على موعد", st2d:"عن بعد أو حضورياً، حسب رغبتك.",
+    st3t:"حصة العمل", st3d:"شرح وتمارين وإجابة عن أسئلتك.",
+    st4t:"المتابعة", st4d:"يمكنك التواصل معي لأسئلتك بين الحصص.",
+    contactTag:"تواصل", contactTitle:"تواصل معي", contactDesc:"اختر واتساب أو البريد الإلكتروني — الاستمارة تتكيف مع اختيارك.",
+    contactNoteTitle:"تواصل مباشر", contactNoteDesc:"يمكنك أيضاً التواصل معي مباشرة، دون المرور بالاستمارة.",
+    waLabel:"فتح واتساب", emailLabel:"إرسال بريد إلكتروني", responseNote:"الرد عادة خلال 24 ساعة.",
+    labelName:"الاسم الكامل", labelLevel:"المستوى", labelEmail:"بريدك الإلكتروني", labelService:"الخدمة المطلوبة", labelNotes:"حاجتك باختصار",
+    optCem:"المتوسط", optLycee:"الثانوي", optLicence:"ليسانس", optMaster:"ماستر",
+    svc1:"علوم الطبيعة والحياة — المتوسط والثانوي", svc2:"البيولوجيا وعلم الأحياء الدقيقة الجامعي", svc3:"الأعمال التطبيقية والتقارير", svc4:"الواجبات والعروض", svc5:"التحضير للامتحانات",
+    submitWa:"إرسال عبر واتساب", submitEmail:"إرسال بالبريد الإلكتروني",
+    accountTag:"حسابي", accountTitle:"تابع حصصك", accountDesc:"أنشئ حساباً لمتابعة سجل حجوزاتك وحالة دفعاتك.",
+    tabSignin:"تسجيل الدخول", tabSignup:"إنشاء حساب", labelPassword:"كلمة المرور",
+    btnSignin:"تسجيل الدخول", btnSignup:"إنشاء حسابي", btnSignout:"تسجيل الخروج",
+    authErrGeneric:"حدث خطأ ما. تحقق من بياناتك.", authErrSignup:"تعذر إنشاء الحساب. ربما هذا البريد مستخدم مسبقاً.",
+    resDate:"التاريخ", resNone:"ليس لديك أي حجز بعد.", resPaid:"مدفوع", resPending:"في الانتظار",
+    toastEmailSent:"تم إرسال الرسالة — سأرد خلال 24 ساعة.", toastEmailError:"فشل الإرسال. أعد المحاولة أو استخدم واتساب.",
+    toastWaRedirect:"جاري التحويل إلى واتساب…", toastSignedUp:"تم إنشاء الحساب بنجاح.", toastSignedIn:"تم تسجيل الدخول بنجاح.", toastSignedOut:"تم تسجيل الخروج.",
+    stat1:"المستويات المشمولة", stat2:"خبرة في علم الأحياء الدقيقة", stat3:"مدة الرد",
+    testiTag:"آراء الطلبة", testiTitle:"ماذا يقول التلاميذ والطلبة", testiDesc:"آراء التلاميذ والطلبة الذين تمت مرافقتهم حتى الآن.",
+    testi1:"«أستاذ ممتاز، يستطيع شرح مفاهيم معقدة في علم الوراثة بوضوح لافت. لم تكن دروسي يوماً بهذه السهولة في الفهم.»",
+    testi2:"«شخص رائع وأستاذ متميز. بفضله حصلت على علامة ممتازة واكتشفت شغفاً حقيقياً بعلوم الطبيعة والحياة.»",
+    testi3:"«عرض منظم بشكل ممتاز، محتوى واضح وعلامة ممتازة في النهاية. مرافقة قيّمة للانطلاق بشكل جيد في الجامعة.»",
+    testi4:"«شهادتك القادمة ستظهر هنا.»",
+    testiRole1:"طالب، ليسانس 2", testiSub1:"وحدة علم الوراثة",
+    testiRole2:"تلميذ، السنة النهائية", testiSub2:"بكالوريا علوم",
+    testiRole3:"طالب، ليسانس 1", testiSub3:"عرض",
+    testiPlaceholderName:"— شهادة قادمة قريباً", testiPlaceholderRole:"أضف رأي أحد التلاميذ",
+    resTag:"موارد مجانية", resTitle:"بطاقات مراجعة مجانية", resDesc:"بعض الموارد القابلة للتحميل للمراجعة الذاتية. سيتم إضافة المزيد بانتظام.",
+    resItem1:"بطاقة — أساسيات علم الأحياء الدقيقة", resItem2:"بطاقة — الوراثة، مفاهيم أساسية", resItem3:"بطاقة — منهجية BEM/BAC لمادة SNV",
+    resItemSub:"PDF · سيُضاف قريباً", resDownload:"تحميل",
+    pmBaridi:"BaridiMob", pmBaridiDesc:"تحويل قبل الحصة", pmCcp:"CCP", pmCcpDesc:"تحويل بنكي، الرقم يُرسل عند الطلب",
+    pmCash:"نقداً", pmCashDesc:"يُسلَّم يداً بيد قبل بداية الحصة",
+    labelPack:"الصيغة السعرية",
+    pack1:"المتوسط / الثانوي — 1000 دج / حصة (60 د)", pack2:"الجامعة — 1500 دج / حصة (60 د)", pack3:"عرض — 750 دج (سعر ثابت)",
+    pack4:"تقرير تربص / أعمال تطبيقية — 350 دج (سعر ثابت)", pack5:"باقة شهرية — المتوسط/الثانوي — 3600 دج (-10%)", pack6:"باقة شهرية — الجامعة — 5400 دج (-10%)",
+    labelDate:"التاريخ المفضل (اختياري)", paymentReminder:"الدفع عبر CCP أو BaridiMob أو نقداً، يتم قبل بداية الحصة.",
+    adminTag:"الإدارة", adminTitle:"جميع الحجوزات",
+    cancelBtn:"إلغاء", resUnpaid:"غير مدفوع", resCancelled:"ملغى",
+    toastCancelled:"تم إلغاء الحجز.", toastCancelError:"تعذر الإلغاء. أعد المحاولة.", toastStatusUpdated:"تم تحديث الحالة.",
+    confirmCancel:"تأكيد إلغاء هذا الحجز؟",
+    footerText:"© 2026 BIOSCOPE — زكراوي رابح علاء الدين. جميع الحقوق محفوظة."
+  }
+};
+
+let currentLang = 'fr';
+
+function applyTranslations(lang){
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    if (el.id === 'headerAccountBtn' && el.classList.contains('logged-in')) return;
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  // keep submit button text in sync with the active contact method
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.textContent = (contactMethod === 'email') ? t.submitEmail : t.submitWa;
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentLang = btn.dataset.lang;
+    applyTranslations(currentLang);
+  });
+});
+
+// Mobile nav toggle
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+menuToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
+mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+
+// Contact details
+const WHATSAPP_NUMBER = "213773939496";
+const CONTACT_EMAIL = "rabahallaa666@gmail.com";
+
+// Database (Supabase)
+const SUPABASE_URL = "https://bbvvcpsaulzjjehkufgp.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJidnZjcHNhdWx6amplaGt1ZmdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0MzgzMjQsImV4cCI6MjEwMTAxNDMyNH0.U9L_oGQ89r6rRKKQzq7BYavNeLDN9vixjmio8b-lelc";
+const supabaseClient = (window.supabase && SUPABASE_URL.indexOf('YOUR-PROJECT') === -1)
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  : null;
+
+// Direct email sending (EmailJS)
+const EMAILJS_PUBLIC_KEY = "T1_S1g2RYLhJ1M79c";
+const EMAILJS_SERVICE_ID = "service_47043qv";
+const EMAILJS_TEMPLATE_ID = "template_lngjfn5";
+const emailjsReady = window.emailjs && EMAILJS_PUBLIC_KEY.indexOf('YOUR_') === -1;
+if (emailjsReady) emailjs.init(EMAILJS_PUBLIC_KEY);
+
+// Toast notifications
+const toastEl = document.getElementById('toast');
+const toastMsgEl = document.getElementById('toastMsg');
+let toastTimer;
+function showToast(msg, isError){
+  toastMsgEl.textContent = msg;
+  toastEl.classList.toggle('error', !!isError);
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3800);
+}
+
+async function logReservation(data){
+  if (!supabaseClient) { console.warn('Supabase not configured — reservation not saved to database yet.'); return false; }
+  try {
+    const { data: { user } } = await supabaseClient.auth.getUser();
+    const { error } = await supabaseClient.from('reservations').insert({ ...data, user_id: user ? user.id : null });
+    if (error) { console.error('Reservation insert failed:', error.message, error); return false; }
+    return true;
+  } catch (err) {
+    console.error('Reservation logging failed:', err);
+    return false;
+  }
+}
+
+let contactMethod = 'whatsapp';
+const methodButtons = document.querySelectorAll('#bookingForm .method-btn');
+const emailFieldGroup = document.getElementById('emailFieldGroup');
+
+methodButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    methodButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    contactMethod = btn.dataset.method;
+    emailFieldGroup.style.display = (contactMethod === 'email') ? 'block' : 'none';
+    applyTranslations(currentLang);
+  });
+});
+
+const form = document.getElementById('bookingForm');
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const level = document.getElementById('level').value;
+  const service = document.getElementById('service').value;
+  const pack = document.getElementById('pack').value;
+  const preferredDate = document.getElementById('preferredDate').value;
+  const notes = document.getElementById('notes').value.trim();
+  const senderEmail = document.getElementById('email').value.trim();
+  const t = translations[currentLang];
+
+  const saved = await logReservation({
+    name: name,
+    level: level,
+    service: service,
+    pack: pack,
+    preferred_time: preferredDate || null,
+    contact_method: contactMethod,
+    contact_info: contactMethod === 'email' ? senderEmail : null,
+    notes: notes || null,
+    payment_status: 'pending'
+  });
+  if (saved && supabaseClient) refreshAccountView();
+
+  if (contactMethod === 'whatsapp') {
+    let message = `${name} | ${level} | ${service} | ${pack}`;
+    if (preferredDate) message += ` | ${preferredDate}`;
+    if (notes) message += ` | ${notes}`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    showToast(t.toastWaRedirect);
+  } else if (emailjsReady) {
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name: name, from_email: senderEmail, level: level, service: service, pack: pack, preferred_time: preferredDate, notes: notes
+      });
+      showToast(t.toastEmailSent);
+      form.reset();
+      emailFieldGroup.style.display = 'block';
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      showToast(t.toastEmailError, true);
+    }
+  } else {
+    // EmailJS not configured yet — fall back to opening the email app
+    const subject = `${service} — ${name}`;
+    let body = `${name}\n${level}\n${service}`;
+    if (senderEmail) body += `\n${senderEmail}`;
+    if (notes) body += `\n${notes}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+});
+
+// Account: sign in / sign up / sign out / reservation history
+document.querySelectorAll('.auth-tabs .method-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.auth-tabs .method-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    document.getElementById('signinForm').classList.toggle('active', tab === 'signin');
+    document.getElementById('signupForm').classList.toggle('active', tab === 'signup');
+  });
+});
+
+const authBlock = document.getElementById('authBlock');
+const accountLoggedIn = document.getElementById('accountLoggedIn');
+const whoLabel = document.getElementById('whoLabel');
+const resTable = document.getElementById('resTable');
+const adminPanel = document.getElementById('adminPanel');
+const adminTable = document.getElementById('adminTable');
+const ADMIN_EMAIL = "rabahallaa666@gmail.com";
+
+function statusBadge(status, t){
+  const map = { paid:['paid', t.resPaid], pending:['pending', t.resPending], unpaid:['unpaid', t.resUnpaid], cancelled:['cancelled', t.resCancelled] };
+  const [cls, label] = map[status] || map.pending;
+  return `<span class="badge ${cls}">${label}</span>`;
+}
+
+async function cancelReservation(id){
+  const t = translations[currentLang];
+  if (!confirm(t.confirmCancel)) return;
+  const { error } = await supabaseClient.from('reservations').update({ payment_status: 'cancelled' }).eq('id', id);
+  if (error) { showToast(t.toastCancelError, true); return; }
+  showToast(t.toastCancelled);
+  refreshAccountView();
+}
+window.cancelReservation = cancelReservation;
+
+async function adminSetStatus(id, status){
+  const { error } = await supabaseClient.from('reservations').update({ payment_status: status }).eq('id', id);
+  const t = translations[currentLang];
+  if (error) { showToast(t.toastCancelError, true); return; }
+  showToast(t.toastStatusUpdated);
+  refreshAccountView();
+}
+window.adminSetStatus = adminSetStatus;
+
+async function refreshAccountView(){
+  if (!supabaseClient) return;
+  const t = translations[currentLang];
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  const headerAccountBtn = document.getElementById('headerAccountBtn');
+
+  if (session && session.user) {
+    authBlock.style.display = 'none';
+    accountLoggedIn.style.display = 'block';
+    whoLabel.textContent = session.user.email;
+
+    // Header badge
+    const fullName = (session.user.user_metadata && session.user.user_metadata.full_name) || session.user.email;
+    const initial = fullName.trim().charAt(0).toUpperCase();
+    headerAccountBtn.classList.add('logged-in');
+    headerAccountBtn.innerHTML = `<span class="acc-avatar">${initial}</span><span class="acc-label">${fullName.split(' ')[0]}</span>`;
+
+    // Auto-fill booking form so returning clients don't retype their info
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    if (nameField && !nameField.value) nameField.value = fullName;
+    if (emailField && !emailField.value) emailField.value = session.user.email;
+
+    const { data: rows, error } = await supabaseClient.from('reservations')
+      .select('*').eq('user_id', session.user.id).order('created_at', { ascending: false });
+    if (error || !rows || rows.length === 0) {
+      resTable.innerHTML = `<div class="empty-state">${t.resNone}</div>`;
+    } else {
+      resTable.innerHTML = rows.map(r => `
+        <div class="res-row">
+          <div><div class="r-service">${r.service}${r.pack ? ' — ' + r.pack : ''}</div><div class="r-date">${new Date(r.created_at).toLocaleDateString()}${r.preferred_time ? ' · ' + new Date(r.preferred_time).toLocaleString() : ''}</div></div>
+          <div class="r-actions">
+            ${statusBadge(r.payment_status, t)}
+            ${(r.payment_status !== 'cancelled') ? `<button class="cancel-btn" onclick="cancelReservation('${r.id}')">${t.cancelBtn}</button>` : ''}
+          </div>
+        </div>`).join('');
+    }
+
+    if (session.user.email === ADMIN_EMAIL) {
+      adminPanel.style.display = 'block';
+      const { data: allRows, error: adminError } = await supabaseClient.from('reservations')
+        .select('*').order('created_at', { ascending: false });
+      if (adminError || !allRows || allRows.length === 0) {
+        adminTable.innerHTML = `<div class="empty-state">${t.resNone}</div>`;
+      } else {
+        adminTable.innerHTML = allRows.map(r => `
+          <div class="admin-row">
+            <div><div class="r-service">${r.name || ''} — ${r.service}${r.pack ? ' / ' + r.pack : ''}</div><div class="r-date">${r.level || ''} · ${r.contact_method || ''}${r.contact_info ? ' (' + r.contact_info + ')' : ''}</div></div>
+            <div class="r-date">${new Date(r.created_at).toLocaleDateString()}</div>
+            <select onchange="adminSetStatus('${r.id}', this.value)">
+              <option value="pending" ${r.payment_status === 'pending' ? 'selected' : ''}>${t.resPending}</option>
+              <option value="paid" ${r.payment_status === 'paid' ? 'selected' : ''}>${t.resPaid}</option>
+              <option value="unpaid" ${r.payment_status === 'unpaid' ? 'selected' : ''}>${t.resUnpaid}</option>
+              <option value="cancelled" ${r.payment_status === 'cancelled' ? 'selected' : ''}>${t.resCancelled}</option>
+            </select>
+          </div>`).join('');
+      }
+    } else {
+      adminPanel.style.display = 'none';
+    }
+  } else {
+    authBlock.style.display = 'grid';
+    accountLoggedIn.style.display = 'none';
+    adminPanel.style.display = 'none';
+    headerAccountBtn.classList.remove('logged-in');
+    headerAccountBtn.innerHTML = t.headerLogin;
+  }
+}
+
+const signinForm = document.getElementById('signinForm');
+signinForm.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const t = translations[currentLang];
+  const errEl = document.getElementById('siError');
+  errEl.classList.remove('show');
+  if (!supabaseClient) { errEl.textContent = t.authErrGeneric; errEl.classList.add('show'); return; }
+  const { error } = await supabaseClient.auth.signInWithPassword({
+    email: document.getElementById('siEmail').value.trim(),
+    password: document.getElementById('siPass').value
+  });
+  if (error) { errEl.textContent = t.authErrGeneric; errEl.classList.add('show'); return; }
+  showToast(t.toastSignedIn);
+  refreshAccountView();
+});
+
+const signupForm = document.getElementById('signupForm');
+signupForm.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const t = translations[currentLang];
+  const errEl = document.getElementById('suError');
+  errEl.classList.remove('show');
+  if (!supabaseClient) { errEl.textContent = t.authErrGeneric; errEl.classList.add('show'); return; }
+  const { error } = await supabaseClient.auth.signUp({
+    email: document.getElementById('suEmail').value.trim(),
+    password: document.getElementById('suPass').value,
+    options: { data: { full_name: document.getElementById('suName').value.trim() } }
+  });
+  if (error) { errEl.textContent = t.authErrSignup; errEl.classList.add('show'); return; }
+  showToast(t.toastSignedUp);
+  refreshAccountView();
+});
+
+document.getElementById('signOutBtn').addEventListener('click', async () => {
+  if (!supabaseClient) return;
+  await supabaseClient.auth.signOut();
+  showToast(translations[currentLang].toastSignedOut);
+  refreshAccountView();
+});
+
+if (supabaseClient) {
+  supabaseClient.auth.onAuthStateChange(() => refreshAccountView());
+  refreshAccountView();
+
+  // Live updates: refresh the account/admin view the instant a reservation is added or changed
+  // (requires Realtime enabled on the 'reservations' table in Supabase — Database > Replication)
+  supabaseClient
+    .channel('reservations-live')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'reservations' }, () => {
+      refreshAccountView();
+    })
+    .subscribe();
+}
+
+// Floating quick-nav: scroll spy + smooth scroll
+const quickNavLinks = document.querySelectorAll('.quick-nav a');
+const sections = Array.from(quickNavLinks).map(a => document.getElementById(a.dataset.target));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const link = document.querySelector(`.quick-nav a[data-target="${entry.target.id}"]`);
+    if (entry.isIntersecting) {
+      quickNavLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px' });
+sections.forEach(s => { if (s) observer.observe(s); });
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Generic carousel: arrows + swipe + dots
+function initCarousel(trackId, prevId, nextId, dotsId, cardSelector){
+  const track = document.getElementById(trackId);
+  const prevBtn = document.getElementById(prevId);
+  const nextBtn = document.getElementById(nextId);
+  const dotsWrap = document.getElementById(dotsId);
+  const cards = track.querySelectorAll(cardSelector);
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    });
+    dotsWrap.appendChild(dot);
+  });
+  const dots = dotsWrap.querySelectorAll('button');
+
+  function scrollByCard(dir) {
+    const cardWidth = cards[0].getBoundingClientRect().width + 22;
+    track.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+  }
+  nextBtn.addEventListener('click', () => scrollByCard(1));
+  prevBtn.addEventListener('click', () => scrollByCard(-1));
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const idx = Array.from(cards).indexOf(entry.target);
+      if (entry.isIntersecting && idx > -1) {
+        dots.forEach(d => d.classList.remove('active'));
+        dots[idx].classList.add('active');
+      }
+    });
+  }, { root: track, threshold: 0.6 });
+  cards.forEach(c => obs.observe(c));
+}
+
+initCarousel('svcTrack', 'svcPrev', 'svcNext', 'svcDots', '.service-card');
+initCarousel('testiTrack', 'testiPrev', 'testiNext', 'testiDots', '.testi-card');
+
+// Back-to-top button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('show', window.scrollY > 500);
+});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
