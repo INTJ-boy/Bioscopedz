@@ -1,0 +1,13 @@
+{
+  "name": "BIOSCOPE",
+  "short_name": "BIOSCOPE",
+  "description": "Cours particuliers en SNV, biologie et microbiologie",
+  "start_url": "/Bioscopedz/",
+  "display": "standalone",
+  "background_color": "#EAF3EE",
+  "theme_color": "#0B6E5F",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
