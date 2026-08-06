@@ -1,0 +1,106 @@
+name: Pages Build & Deployment (robust)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    name: Build and deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Build site
+        run: |
+          npm run build
+
+      - name: Check build output
+        run: |
+          OUT_DIR=./public
+          if [ ! -d "$OUT_DIR" ] || [ -z "$(ls -A $OUT_DIR)" ]; then
+            echo "Build output missing or empty: $OUT_DIR"
+            ls -la || true
+            exit 1
+          fi
+          echo "Build output present: $OUT_DIR"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v1
+
+      - name: Install jq (used by polling script)
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq
+
+      - name: Wait for Pages deployment (robust polling)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          owner=$(echo "$REPO" | cut -d'/' -f1)
+          repo=$(echo "$REPO" | cut -d'/' -f2)
+          api="https://api.github.com/repos/${owner}/${repo}/pages/deployment"
+
+          # Tunable parameters
+          max_attempts=60      # number of polling attempts
+          sleep_seconds=10     # initial sleep between attempts (will exponential backoff up to cap)
+          backoff_cap=60       # maximum sleep seconds between polls
+
+          attempt=1
+          echo "Polling Pages deployment status for ${REPO} (max_attempts=${max_attempts})"
+
+          while [ $attempt -le $max_attempts ]; do
+            response=$(curl -sS -H "Authorization: Bearer ${GITHUB_TOKEN}" -H "Accept: application/vnd.github+json" "${api}") || true
+            status=$(echo "$response" | jq -r '.status // empty' || true)
+            url=$(echo "$response" | jq -r '.html_url // empty' || true)
+            echo "Attempt $attempt/$max_attempts — status: ${status:-unknown} — url: ${url:-none}"
+
+            if [ "$status" = "built" ] || [ "$status" = "published" ] || [ "$status" = "completed" ]; then
+              echo "Pages deployment finished with status: $status"
+              echo "Deployment details:"
+              echo "$response" | jq -C .
+              exit 0
+            fi
+
+            # Detect error states reported by GitHub Pages
+            error_message=$(echo "$response" | jq -r '.error // empty' || true)
+            if [ -n "$error_message" ]; then
+              echo "Pages API returned an error: $error_message"
+            fi
+
+            sleep $sleep_seconds
+            attempt=$((attempt+1))
+            # exponential backoff capped at backoff_cap
+            sleep_seconds=$(( sleep_seconds < backoff_cap ? sleep_seconds*2 : backoff_cap ))
+          done
+
+          echo "Timed out waiting for Pages deployment after ${max_attempts} attempts."
+          echo "Last API response:"
+          echo "$response" | jq -C . || true
+          exit 1
