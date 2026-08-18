@@ -26,3 +26,8 @@ A trilingual tutoring platform for private lessons in Sciences de la Nature et d
 ## License / Contact
 
 Free to browse and use as a reference. Questions or feedback: use the in-app contact form, or reach out on [LinkedIn](https://www.linkedin.com/in/zekraouirabahallaaeddine).
+
+
+© 2026 Zekraoui Rabah Allaa Eddine 🦑.
+ All Rights Reserved.
+Unauthorized copying, reproduction, modification, redistribution, or commercial use of this project or its source code is prohibited. For permission, licensing, or other inquiries, contact the copyright holder.
