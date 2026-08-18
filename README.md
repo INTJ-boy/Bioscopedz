@@ -1,4 +1,4 @@
-[! Bioscopedz banner](og-image.png) 
+[! Bioscopedz banner](og-image-v2.png) 
 # BIOSCOPE 🦑
 
 A trilingual tutoring platform for private lessons in Sciences de la Nature et de la Vie (SNV), biology, and microbiology, from CEM through Master's level, in Algeria. Built and run by Zekraoui Rabah Allaa Eddine, a Master's student in Microbiology and Quality Control (USTHB).
